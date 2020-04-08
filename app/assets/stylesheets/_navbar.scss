@@ -1,0 +1,23 @@
+@import "bulma/bulma";
+@import "variables";
+
+#navbar {
+  margin-top: $margin;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+
+  ul > li:first-child {
+    margin-left: $margin;
+  }
+
+  div {
+    border-bottom: $tabs-border-bottom-width $tabs-border-bottom-style $tabs-border-bottom-color;
+    padding-right: $margin;
+
+    a, button {
+      &:hover {
+        color: $button-hover-color;
+      }
+    }
+  }
+}
