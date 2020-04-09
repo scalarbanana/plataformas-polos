@@ -1,0 +1,9 @@
+@import "bulma/bulma";
+
+#login-container {
+  display: flex;
+  flex-grow: initial;
+  flex-direction: column;
+  align-items: center;
+  width: min-content;
+}

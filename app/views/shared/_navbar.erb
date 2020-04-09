@@ -6,6 +6,7 @@
   </ul>
   <div class="level-right">
     <a class="button is-link">Minha Conta (<%= current_user.name %>)</a>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
   </div>
 </nav>
 

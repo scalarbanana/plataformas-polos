@@ -13,7 +13,6 @@
 !/log/.keep
 !/tmp/.keep
 
-
 /public/assets
 .byebug_history
 
@@ -26,3 +25,5 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+/spec/examples.txt

@@ -1,0 +1,33 @@
+<%= render(layout: 'devise/shared/external_layout', locals: { title: t('.sign_in') }) do %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label :email, html: { class: 'label' } %>
+      <div class="control">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", html: { class: 'input' } %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= f.label :password, html: { class: 'label' } %>
+      <div class="control">
+        <%= f.password_field :password, autocomplete: "current-password", html: { class: 'input' } %>
+      </div>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <%= f.check_box :remember_me, html: { class: 'checkbox' } %>
+            <%= t("mongoid.attributes.user.remember_me") %>
+          </label>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="field buttons is-centered">
+      <button class="button is-primary is-fullwidth">Login</button>
+      <a class="button is-link is-light is-fullwidth" href="<%= new_user_password_url %>"><%= t("devise.shared.links.forgot_your_password") %></a>
+    </div>
+  <% end %>
+<% end %>
