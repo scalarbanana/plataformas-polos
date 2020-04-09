@@ -32,7 +32,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # rspec-rails is a testing framework for Rails 5+.
-  gem "rspec-rails", "~> 4.0"
+  gem 'rspec-rails', '~> 4.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
