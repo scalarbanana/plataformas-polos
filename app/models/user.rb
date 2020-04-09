@@ -4,7 +4,7 @@ class User
   include Mongoid::Document
 
   field :name, type: String
-  field :roles, type: Array
+  field :roles, type: Array, default: []
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

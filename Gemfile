@@ -36,10 +36,21 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'barnes', '~> 0.0.8'
 
 group :development, :test do
-  # rspec-rails is a testing framework for Rails 5+.
-  gem 'rspec-rails', '~> 4.0'
+  gem 'rails_best_practices', '~> 1.20'
+  gem 'reek', '~> 6.0'
+  gem 'rubocop', '~> 0.81.0'
+  gem 'rubocop-rails', '~> 2.5'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+end
+
+group :test do
+  # SimpleCov is a code coverage analysis tool for Ruby
+  gem 'simplecov', '~> 0.18.5'
+  # rspec-rails is a testing framework for Rails 5+.
+  gem 'rspec-rails', '~> 4.0'
+  # Acceptance test framework for web applications
+  gem 'capybara', '~> 3.32'
 end
 
 group :development do
