@@ -70,7 +70,7 @@ Rails.application.configure do
   }
   ActionMailer::Base.delivery_method = :smtp
 
-  config.action_mailer.default_url_options = { host: ENV['HOST'] }
+  config.action_mailer.default_url_options = { host: ENV['HOST'], protocol: 'https' }
   config.action_mailer.perform_caching     = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
