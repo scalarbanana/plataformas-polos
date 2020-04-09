@@ -30,6 +30,9 @@ gem 'devise-i18n', '~> 1.9'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# Report GC usage data to StatsD.
+gem 'barnes', '~> 0.0.8'
+
 group :development, :test do
   # rspec-rails is a testing framework for Rails 5+.
   gem 'rspec-rails', '~> 4.0'

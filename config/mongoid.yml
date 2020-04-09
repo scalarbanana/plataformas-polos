@@ -173,3 +173,5 @@ production:
   clients:
     default:
       uri: <%= ENV.fetch("MONGODB_URI", "mongodb://localhost:27017/polos_production?readPreference=primary&ssl=false") %>
+      options:
+        retry_writes: false
