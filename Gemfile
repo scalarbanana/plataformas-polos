@@ -19,6 +19,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 # Mongoid is an ODM (Object Document Mapper) Framework for MongoDB
 gem 'mongoid', '~> 7.1'
+# An implementation of the BSON specification in Ruby.
+gem 'bson_ext', '~> 1.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Devise is a flexible authentication solution for Rails based on Warden

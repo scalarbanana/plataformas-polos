@@ -64,6 +64,7 @@ GEM
     bootsnap (1.4.6)
       msgpack (~> 1.0)
     bson (4.8.2)
+    bson_ext (1.5.1)
     builder (3.2.4)
     byebug (11.1.1)
     concurrent-ruby (1.1.6)
@@ -222,6 +223,7 @@ PLATFORMS
 DEPENDENCIES
   barnes (~> 0.0.8)
   bootsnap (>= 1.4.2)
+  bson_ext (~> 1.5)
   byebug
   devise (~> 4.7)
   devise-i18n (~> 1.9)

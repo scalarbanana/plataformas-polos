@@ -306,6 +306,22 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="bson_ext (vbundled(1.5.1)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/bson_ext-1.5.1/ext" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/bson_ext-1.5.1/ext" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/bson_ext-1.5.1/ext" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="builder (vbundled(3.2.4)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
