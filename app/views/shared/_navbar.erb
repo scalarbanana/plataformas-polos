@@ -1,8 +1,8 @@
 <nav class="tabs is-boxed" id="navbar">
-  <ul>
-    <li class="is-active"><a> Equipe </a></li>
-    <li><a> PADhu </a></li>
-    <li><a> Tecitura </a></li>
+  <ul data-controller="navbar" data-navbar-current-path="<%= current_route_scope %>">
+    <li data-target="navbar.dashboard"><a href="/"> Dashboard </a></li>
+    <li data-target="navbar.users"><a href="/users"> Equipe </a></li>
+    <li data-target="navbar.padhu"><a> PADhu Tecitura </a></li>
   </ul>
   <div class="level-right">
     <a class="button is-link">Minha Conta (<%= current_user.name %>)</a>

@@ -30,4 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 pt-BR:
-  hello: "Olá Mundo"
+  enumerize:
+    user:
+      roles:
+        admin: Administrador
+        user: Usuário
