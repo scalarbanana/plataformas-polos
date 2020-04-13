@@ -2,9 +2,13 @@
 
 class User
   include Mongoid::Document
+  extend Enumerize
 
   field :name, type: String
   field :roles, type: Array
+  enumerize :roles, in: %i[user admin], multiple: true
+
+  validates :name, presence: true
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
