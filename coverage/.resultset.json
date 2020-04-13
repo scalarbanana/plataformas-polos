@@ -7,8 +7,12 @@
           null,
           1,
           1,
+          1,
           null,
           1,
+          1,
+          1,
+          null,
           1,
           null,
           null,
@@ -70,28 +74,6 @@
         "branches": {
         }
       },
-      "/home/asantos/Workspace/ufmg/polos/plataformas-polos/app/controllers/dashboard_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null
-        ],
-        "branches": {
-        }
-      },
-      "/home/asantos/Workspace/ufmg/polos/plataformas-polos/app/controllers/application_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null
-        ],
-        "branches": {
-        }
-      },
       "/home/asantos/Workspace/ufmg/polos/plataformas-polos/app/mailers/application_mailer.rb": {
         "lines": [
           null,
@@ -104,26 +86,10 @@
         "branches": {
         }
       },
-      "/home/asantos/Workspace/ufmg/polos/plataformas-polos/app/jobs/application_job.rb": {
+      "/home/asantos/Workspace/ufmg/polos/plataformas-polos/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/home/asantos/Workspace/ufmg/polos/plataformas-polos/app/channels/application_cable/channel.rb": {
-        "lines": [
-          null,
-          null,
-          0,
           0,
           0,
           0
@@ -131,11 +97,10 @@
         "branches": {
         }
       },
-      "/home/asantos/Workspace/ufmg/polos/plataformas-polos/app/channels/application_cable/connection.rb": {
+      "/home/asantos/Workspace/ufmg/polos/plataformas-polos/app/controllers/dashboard_controller.rb": {
         "lines": [
           null,
           null,
-          0,
           0,
           0,
           0
@@ -144,6 +109,6 @@
         }
       }
     },
-    "timestamp": 1586476130
+    "timestamp": 1586803633
   }
 }

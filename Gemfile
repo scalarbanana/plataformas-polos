@@ -15,19 +15,15 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.7'
 # Mongoid is an ODM (Object Document Mapper) Framework for MongoDB
 gem 'mongoid', '~> 7.1'
 # An implementation of the BSON specification in Ruby.
 gem 'bson_ext', '~> 1.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+# Enumerated attributes with I18n and ActiveRecord/Mongoid support
+gem 'enumerize', '~> 2.3.1'
 # Devise is a flexible authentication solution for Rails based on Warden
 gem 'devise', '~> 4.7'
 gem 'devise-i18n', '~> 1.9'
-# Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -36,17 +32,21 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'barnes', '~> 0.0.8'
 
 group :development, :test do
-  gem 'rails_best_practices', '~> 1.20'
-  gem 'reek', '~> 6.0'
-  gem 'rubocop', '~> 0.81.0'
-  gem 'rubocop-rails', '~> 2.5'
+  gem 'rails_best_practices', '~> 1.20', require: false
+  gem 'reek', '~> 6.0', require: false
+  gem 'rubocop', '~> 0.81.0', require: false
+  gem 'rubocop-rails', '~> 2.5', require: false
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :test do
+  # Simple one-liner tests for common Rails functionality
+  gem 'shoulda-matchers', '~> 4.3'
   # SimpleCov is a code coverage analysis tool for Ruby
   gem 'simplecov', '~> 0.18.5'
+  # A library for generating fake data such as names, addresses, and phone numbers.
+  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
   # rspec-rails is a testing framework for Rails 5+.
   gem 'rspec-rails', '~> 4.0'
   # Acceptance test framework for web applications
