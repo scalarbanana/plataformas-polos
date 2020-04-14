@@ -1,0 +1,16 @@
+<%= simple_form_for @user do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :roles, input_html: { size: 2 }, wrapper_html: { class: 'select is-multiple' } %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation, label: 'Confirmação da Senha' %>
+  <div class="field is-grouped is-grouped-centered">
+    <div class="control">
+      <%= link_to 'Voltar', users_path, class: 'button is-link' %>
+    </div>
+    <div class="control">
+      <%= f.button :submit %>
+    </div>
+  </div>
+<% end %>

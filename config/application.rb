@@ -5,14 +5,14 @@ require_relative 'boot'
 require 'rails'
 # Pick the frameworks you want:
 require 'active_model/railtie'
-require 'active_job/railtie'
+# require 'active_job/railtie'
 # require "active_storage/engine"
 require 'action_controller/railtie'
 require 'action_mailer/railtie'
 # require "action_mailbox/engine"
 # require "action_text/engine"
 require 'action_view/railtie'
-require 'action_cable/engine'
+# require 'action_cable/engine'
 require 'sprockets/railtie'
 # require "rails/test_unit/railtie"
 
@@ -29,7 +29,8 @@ module PlataformasPolos
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
-    config.i18n.default_locale = :'pt-BR'
+    config.i18n.available_locales = 'pt-BR'
+    config.i18n.default_locale = 'pt-BR'
 
     config.generators.stylesheets = false
     config.generators.javascripts = false
