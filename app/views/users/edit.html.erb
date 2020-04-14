@@ -1,6 +1,10 @@
-<h1>Editing User</h1>
+<h2 class="subtitle">Editando <%= @user.name %></h2>
 
-<%= render 'form', user: @user %>
+<section class="section">
+  <%= render 'form', user: @user %>
+</section>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div class="buttons">
+  <%= link_to 'Voltar', users_path, class: 'button is-link' %>
+  <%= link_to 'Mostrar', @user, class: 'button is-link' %>
+</div>

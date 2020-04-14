@@ -1,17 +1,10 @@
-<%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-        <% user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= form.submit %>
+<%= simple_form_for @user do |f| %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :roles, input_html: { size: 2 }, wrapper_html: { class: 'select is-multiple' } %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation, label: 'Confirmação da Senha' %>
+  <div class="field is-grouped is-grouped-centered">
+    <%= f.button :submit %>
   </div>
 <% end %>

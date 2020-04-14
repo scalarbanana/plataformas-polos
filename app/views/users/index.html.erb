@@ -21,7 +21,7 @@
       <td class="buttons has-addons is-right">
         <%= link_to 'Visualizar', user, class: 'button is-link' %>
         <%= link_to 'Editar', edit_user_path(user), class: 'button is-link' %>
-        <%= link_to 'Deletar', user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger' if user != current_user %>
+        <%= link_to 'Deletar', user, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'button is-danger' if user != current_user %>
       </td>
     </tr>
   <% end %>
