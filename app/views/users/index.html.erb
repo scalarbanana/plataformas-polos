@@ -5,7 +5,7 @@
     <th>E-mail</th>
     <th>Grupos</th>
     <th>
-      <div class="field is-grouped is-grouped-right">
+      <div class="buttons is-right">
         <%= link_to 'Criar Novo Usuário', new_user_path, class: 'button is-success' %>
       </div>
     </th>
@@ -18,10 +18,12 @@
       <td><%= user.name %></td>
       <td><%= user.email %></td>
       <td><%= user.roles.texts.join(', ') %></td>
-      <td class="buttons has-addons is-right">
-        <%= link_to 'Visualizar', user, class: 'button is-link' %>
-        <%= link_to 'Editar', edit_user_path(user), class: 'button is-link' %>
-        <%= link_to 'Deletar', user, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'button is-danger' if user != current_user %>
+      <td>
+        <div class="buttons has-addons is-right">
+          <%= link_to 'Visualizar', user, class: 'button is-link' if policy(user).show? %>
+          <%= link_to 'Editar', edit_user_path(user), class: 'button is-link' if policy(user).update? %>
+          <%= link_to 'Deletar', user, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'button is-danger' if policy(user).destroy? %>
+        </div>
       </td>
     </tr>
   <% end %>

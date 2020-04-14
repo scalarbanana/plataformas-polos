@@ -2,7 +2,8 @@
   <%= f.error_notification %>
   <%= f.input :name %>
   <%= f.input :email %>
-  <%= f.input :roles, input_html: { size: 2 }, wrapper_html: { class: 'select is-multiple' } %>
+  <%= f.input :roles, disabled: !policy(@user).update_roles?,
+              input_html:       { size: 2 }, wrapper_html: { class: 'select is-multiple' } %>
   <%= f.input :password %>
   <%= f.input :password_confirmation, label: 'Confirmação da Senha' %>
   <div class="field is-grouped is-grouped-centered">
