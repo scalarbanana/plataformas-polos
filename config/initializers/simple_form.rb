@@ -41,9 +41,9 @@ SimpleForm.setup do |config|
 
     ## Inputs
     b.use :label, class: 'label'
-    b.use :input, class: 'input', wrap_with: { tag: :div, class: :control }
-    b.use :hint, wrap_with: { tag: :p, class: 'is-info' }
-    b.use :error, wrap_with: { tag: :p, class: 'is-danger' }
+    b.use :input, class: 'input', error_class: 'is-danger', valid_class: 'is-success', wrap_with: { tag: :div, class: :control }
+    b.use :hint, wrap_with: { tag: :p, class: 'help is-info' }
+    b.use :error, wrap_with: { tag: :p, class: 'help is-danger' }
 
     ## full_messages_for
     # If you want to display the full error message for the attribute, you can

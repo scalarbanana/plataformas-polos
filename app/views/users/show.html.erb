@@ -1,4 +1,4 @@
-<h2 class="subtitle">Visualizando <%= @user.name %></h2>
+<h2 class="title">Visualizando <%= @user.name %></h2>
 
 <section class="section">
   <table class="table">
@@ -13,7 +13,7 @@
         <td>Grupos:</td> <td><%= @user.roles.texts.join(', ') %></td>
       </tr>
       <tr>
-        <td>Último login:</td> <td><%= @user.last_sign_in_at %></td>
+        <td>Último login:</td> <td><%= time_ago_in_words @user.last_sign_in_at %> atrás</td>
       </tr>
     </tbody>
   </table>
