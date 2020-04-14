@@ -21,6 +21,8 @@ gem 'mongoid', '~> 7.1'
 gem 'bson_ext', '~> 1.5'
 # Enumerated attributes with I18n and ActiveRecord/Mongoid support
 gem 'enumerize', '~> 2.3.1'
+# Forms made easy for Rails! It's tied to a simple DSL, with no opinion on markup
+gem 'simple_form', '~> 5.0'
 # Devise is a flexible authentication solution for Rails based on Warden
 gem 'devise', '~> 4.7'
 gem 'devise-i18n', '~> 1.9'
@@ -32,6 +34,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'barnes', '~> 0.0.8'
 
 group :development, :test do
+  gem 'i18n-debug', '~> 1.2'
   gem 'rails_best_practices', '~> 1.20', require: false
   gem 'reek', '~> 6.0', require: false
   gem 'rubocop', '~> 0.81.0', require: false
