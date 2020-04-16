@@ -2,7 +2,9 @@
   <ul data-controller="navbar" data-navbar-current-path="<%= current_route_scope %>">
     <li data-target="navbar.dashboard"><a href="/"> Dashboard </a></li>
     <li data-target="navbar.users"><a href="<%= users_path %>"> Equipe </a></li>
-    <li data-target="navbar.tecitura"><a> Tecitura </a></li>
+    <% if current_user.roles.tecitura? %>
+      <li data-target="navbar.tecitura"><a> Tecitura </a></li>
+    <% end %>
   </ul>
   <div class="level-right">
     <%= link_to("Minha Conta (#{current_user.name})", current_user, class: 'button is-link') %>

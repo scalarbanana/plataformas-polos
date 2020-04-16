@@ -43,6 +43,7 @@ class ApplicationPolicy
 
     def initialize(user, scope)
       raise Pundit::NotAuthorizedError unless user
+
       @user  = user
       @scope = scope
     end

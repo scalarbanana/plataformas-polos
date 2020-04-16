@@ -6,7 +6,7 @@ class User
 
   field :name, type: String
   field :roles, type: Array
-  enumerize :roles, in: %i[user admin], multiple: true
+  enumerize :roles, in: %i[admin tecitura], multiple: true
 
   validates :name, presence: true
 
