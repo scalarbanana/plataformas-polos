@@ -35,3 +35,5 @@ pt-BR:
       roles:
         admin: Administrador
         user: Usuário
+  pundit:
+    default: 'Você não está autorizado a fazer isto.'

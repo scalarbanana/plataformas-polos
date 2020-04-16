@@ -7,7 +7,7 @@ ruby '2.7.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
-gem "rails-i18n", "~> 6.0"
+gem 'rails-i18n', '~> 6.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -27,6 +27,8 @@ gem 'simple_form', '~> 5.0'
 # Devise is a flexible authentication solution for Rails based on Warden
 gem 'devise', '~> 4.7'
 gem 'devise-i18n', '~> 1.9'
+# Minimal authorization through OO design and pure Ruby classes
+gem 'pundit', '~> 2.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

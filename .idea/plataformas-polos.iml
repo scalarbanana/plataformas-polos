@@ -1193,6 +1193,24 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="pundit (vbundled(2.1.0)) [path][gem]" type="rubylib">
+        <properties>
+          <option name="version" value="4" />
+        </properties>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/pundit-2.1.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/pundit-2.1.0/spec" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/pundit-2.1.0/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/pundit-2.1.0/spec" />
+        </SOURCES>
+        <excluded>
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/pundit-2.1.0/spec" />
+        </excluded>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="rack (vbundled(2.2.2)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />

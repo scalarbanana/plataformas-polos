@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
+    @users = policy_scope User
   end
 
   # GET /users/1
@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
+    authorize User
     @user = User.new(user_params)
 
     if @user.save
@@ -49,16 +50,19 @@ class UsersController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    @user = User.find(params[:id])
+    @user = authorize User.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.
   def user_params
     user = params.fetch(:user)
+
+    user.delete(:roles) unless policy(@user).update_roles?
     if user[:password].blank? && user[:password_confirmation].blank?
       user.delete(:password)
       user.delete(:password_confirmation)
     end
+
     user.permit(:name, :email, :password, :password_confirmation, roles: [])
   end
 end
