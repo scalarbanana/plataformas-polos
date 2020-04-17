@@ -1,0 +1,4 @@
+- flash.each do |type, msg|
+  %div{data: { controller: 'flash' }, class: ['notification', notification_class(type)]}
+    %button.delete{data: { action: 'flash#close' }}
+    %p= msg

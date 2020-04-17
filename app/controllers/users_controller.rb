@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    authorize User
     @user = User.new
   end
 

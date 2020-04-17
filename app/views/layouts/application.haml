@@ -1,0 +1,15 @@
+!!!
+%html{:lang => "pt-BR"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Plataforma Polos
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    = render "shared/flash"
+    = render "shared/navbar" if user_signed_in?
+    %main.container.is-fluid
+      = yield

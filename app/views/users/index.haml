@@ -1,0 +1,20 @@
+%table.table.is-hoverable.is-fullwidth
+  %thead
+  %tr
+    %th Nome
+    %th E-mail
+    %th Grupos
+    %th
+      .buttons.is-right
+        = link_to 'Criar Novo Usuário', new_user_path, class: 'button is-success'
+  %tbody
+  - @users.each do |user|
+    %tr
+      %td= user.name
+      %td= user.email
+      %td= user.roles.texts.join(', ')
+      %td
+        .buttons.has-addons.is-right
+          = link_to 'Visualizar', user, class: 'button is-link' if policy(user).show?
+          = link_to 'Editar', edit_user_path(user), class: 'button is-link' if policy(user).update?
+          = link_to 'Deletar', user, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'button is-danger' if policy(user).destroy?

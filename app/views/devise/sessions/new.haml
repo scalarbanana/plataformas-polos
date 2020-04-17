@@ -1,0 +1,19 @@
+= render(layout: 'devise/shared/external_layout', locals: { title: t('.sign_in') }) do
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .field
+      = f.label :email, html: { class: 'label' }
+      .control
+        = f.email_field :email, autofocus: true, autocomplete: "email", html: { class: 'input' }
+    .field
+      = f.label :password, html: { class: 'label' }
+      .control
+        = f.password_field :password, autocomplete: "current-password", html: { class: 'input' }
+    - if devise_mapping.rememberable?
+      .field
+        .control
+          %label.checkbox
+            = f.check_box :remember_me, html: { class: 'checkbox' }
+            = t("mongoid.attributes.user.remember_me")
+    .field.buttons.is-centered
+      %button.button.is-primary.is-fullwidth Login
+      %a.button.is-link.is-light.is-fullwidth{:href => new_user_password_url}= t("devise.shared.links.forgot_your_password")

@@ -1,0 +1,11 @@
+= render(layout: 'devise/shared/external_layout', locals: { title: t('.forgot_your_password') }) do
+  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+    .field
+      = f.label :email, html: { class: 'label' }
+      .control
+        = f.email_field :email, autofocus: true, autocomplete: "email", html: { class: 'input' }
+    .field.is-grouped
+      .control
+        %a.button.is-link.is-light{:href => new_user_session_url} Login
+      .control
+        %button.button.is-primary= t('devise.passwords.new.send_me_reset_password_instructions')
