@@ -22,6 +22,12 @@ gem 'turbolinks', '~> 5'
 gem 'mongoid', '~> 7.1'
 # An implementation of the BSON specification in Ruby.
 gem 'bson_ext', '~> 1.5'
+# A Mongoid Extension that simplifies the use of MongoDB spatial features.
+gem 'mongoid-geospatial', '~> 5.1'
+# Complete Ruby geocoding solution.
+gem 'geocoder', '~> 1.6'
+# Ruby gem for phone validation and formatting using google libphonenumber library data
+gem 'phonelib', '~> 0.6.43'
 # Enumerated attributes with I18n and ActiveRecord/Mongoid support
 gem 'enumerize', '~> 2.3.1'
 # Forms made easy for Rails! It's tied to a simple DSL, with no opinion on markup

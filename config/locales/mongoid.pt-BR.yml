@@ -1,0 +1,25 @@
+pt-BR:
+  mongoid:
+    attributes:
+      contato:
+        nome: Nome
+        telefone: Telefone
+        endereco: Endereço
+      tecitura:
+        vinculacao: Vinculação
+        vinculacao_ano: Ano de Vinculação
+        vinculacao_semestre: Semestre de Vinculação
+        regiao: Região
+        situacao_atual: Situação Atual
+        nucleo_familiar: Núcleo Familiar
+        situacao_acolhimento: Situação de Acolhimento
+        ref_atencao_primaria: Referência de Atenção Primária
+        ref_assistencia_social: Referência em Assistência Social
+        vinc_familiares_comunitarios: Vínculos Familiares e Comunitários
+        situacao_juridica: Situação Jurídica
+        relatorios: Relatórios
+        equipe_tecitura: Equipe Tecitura
+        ref_padhu: Referência Padhu
+        responsaveis: 'Responsáveis'
+        mulher_acompanhada: Mulher Acompanhada
+        contatos: Contatos

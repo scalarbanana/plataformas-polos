@@ -1,0 +1,22 @@
+%table.table.is-hoverable.is-fullwidth
+  %thead
+    %tr
+      %th= t 'mongoid.attributes.tecitura.mulher_acompanhada'
+      %th= t 'mongoid.attributes.tecitura.vinculacao'
+      %th= t 'mongoid.attributes.tecitura.regiao'
+      %th= t 'mongoid.attributes.tecitura.responsaveis'
+      %th
+        .buttons.is-right
+          = link_to 'Criar novo acompanhamento', new_tecitura_path, class: 'button is-success'
+  %tbody
+    - @tecituras.each do |tecitura|
+      %tr
+        %td= tecitura.mulher_acompanhada.nome
+        %td= ano_semestre(tecitura)
+        %td= tecitura.regiao
+        %td= tecitura.responsaveis
+        %td
+          .buttons.has-addons.is-right
+            = link_to 'Visualizar', tecitura, class: 'button is-link'
+            = link_to 'Editar', edit_tecitura_path(tecitura), class: 'button is-link'
+            = link_to 'Deletar', tecitura, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'button is-danger' if policy(tecitura).destroy?

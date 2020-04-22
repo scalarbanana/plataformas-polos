@@ -1,0 +1,43 @@
+= simple_form_for(@tecitura) do |f|
+  = f.error_notification
+  = f.simple_fields_for :mulher_acompanhada do |fm|
+    .field.is-horizontal
+      .field-label.is-normal
+        %label.label Mulher Acompanhada:
+      .field-body
+        = fm.input :nome, placeholder: "Nome", label: false,  control_html: { class: 'is-expanded' }
+        = fm.input :telefone, as: :tel, placeholder: "Telefone", label: false,  control_html: { class: 'is-expanded' }
+    .field.is-horizontal
+      .field-label.is-normal
+      .field-body
+        = fm.simple_fields_for :endereco do |fme|
+          = fme.input :texto, placeholder: 'Endereço', label: false, wrapper_html: { class: 'is-expanded' }
+  .field.is-horizontal
+    .field-label.is-normal
+      %label.label Vinculação:
+    .field-body
+      = f.input :vinculacao_ano, label: false, collection: (2000..Date.current.year).reverse_each, prompt: 'Ano',
+        wrapper_html: false, control_html: { class: 'select is-fullwidth' }
+      %label.label.is-large /&nbsp&nbsp
+      = f.input :vinculacao_semestre, label: false, collection: [['1º', 1], ['2º', 2]], prompt: 'Semestre',
+        wrapper_html: false, control_html: { class: 'select is-fullwidth' }
+  = f.input :regiao, input_html: { list: 'regioes' }
+  %datalist#regioes
+    - Tecitura.where(:regiao.ne => nil).only(:regiao).map(&:regiao).each do |regiao|
+      %option{value: regiao}
+  = f.input :situacao_atual, as: :text
+  = f.input :nucleo_familiar, as: :text
+  = f.input :situacao_acolhimento, as: :text
+  = f.input :ref_atencao_primaria, as: :text
+  = f.input :ref_assistencia_social, as: :text
+  = f.input :vinc_familiares_comunitarios, as: :text
+  = f.input :situacao_juridica, as: :text
+  -# = f.input :relatorios, as: :file
+  = f.input :equipe_tecitura
+  = f.input :ref_padhu
+  = f.input :responsaveis
+  .field.is-grouped.is-grouped-centered
+    .control
+      = link_to 'Voltar', tecituras_path, class: 'button is-link'
+    .control
+      = f.button :submit

@@ -1175,29 +1175,29 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="parser (vbundled(2.7.1.0)) [path][gem]" type="rubylib">
+      <library name="parser (vbundled(2.7.1.1)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
         </properties>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.0/ci" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.0/doc" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.0/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.1/ci" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.1/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.1/doc" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.1/test" />
         </CLASSES>
         <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.0/ci" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.0/doc" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.0/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.1/ci" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.1/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.1/doc" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.1/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.1/test" />
         </SOURCES>
         <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.0/ci" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.0/doc" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.0/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.1/ci" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.1/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.1/doc" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/parser-2.7.1.1/test" />
         </excluded>
       </library>
     </orderEntry>
