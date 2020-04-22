@@ -3,8 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  context 'creation' do
+  context 'validation' do
     it { is_expected.to validate_presence_of(:name) }
-    it { is_expected.to enumerize(:roles).in(:user, :admin) }
+    it { is_expected.to enumerize(:roles).in(:admin, :tecitura) }
   end
 end

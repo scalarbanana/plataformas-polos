@@ -1,0 +1,21 @@
+%h2.title Visualizando #{@user.name}
+
+%section.section
+  %table.table
+    %tbody
+      %tr
+        %td Nome:
+        %td= @user.name
+      %tr
+        %td E-mail:
+        %td= @user.email
+      %tr
+        %td Grupos:
+        %td= @user.roles.texts.join(', ')
+      %tr
+        %td Último login:
+        %td= time_ago_in_words @user.last_sign_in_at
+
+.buttons
+  = link_to 'Voltar', users_path, class: 'button is-link'
+  = link_to 'Editar', edit_user_path(@user), class: 'button is-link'

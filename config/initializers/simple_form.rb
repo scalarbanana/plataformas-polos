@@ -24,7 +24,7 @@ SimpleForm.setup do |config|
 
     # Calculates placeholders automatically from I18n
     # You can also pass a string as f.input placeholder: "Placeholder"
-    # b.use :placeholder
+    b.optional :placeholder
 
     ## Optional extensions
     # Calculates maxlength from length validations for string inputs
@@ -41,7 +41,9 @@ SimpleForm.setup do |config|
 
     ## Inputs
     b.use :label, class: 'label'
-    b.use :input, class: 'input', error_class: 'is-danger', valid_class: 'is-success', wrap_with: { tag: :div, class: :control }
+    b.wrapper :control, tag: :div, class: 'control' do |c|
+      c.use :input, class: 'input', error_class: 'is-danger', valid_class: 'is-success'
+    end
     b.use :hint, wrap_with: { tag: :p, class: 'help is-info' }
     b.use :error, wrap_with: { tag: :p, class: 'help is-danger' }
 
@@ -51,6 +53,28 @@ SimpleForm.setup do |config|
     #
     # b.use :full_error, wrap_with: { tag: :span, class: :error }
   end
+
+  # config.wrappers :file, class: :field do |b|
+  #   b.use :html5
+  #   b.use :label, class: 'label'
+  #   b.wrapper :container, tag: :div, class: 'file' do |c|
+  #     c.wrapper :label, tag: :label, class: 'file-label' do |e|
+  #       e.use :input, class: 'file-input'
+  #     end
+  #   end
+  # end
+  #
+  # config.wrappers :rich_text, class: :field,
+  #                             html: { data: { controller: 'rich-text' } } do |b|
+  #   b.use :html5
+  #   b.use :label, class: 'label'
+  #   b.wrapper :control, tag: :div, class: 'control' do |c|
+  #     c.use :input
+  #     c.wrapper :editor, tag: :div, class: 'textarea',
+  #                        html: { data: { target: 'rich-text.editor' } } do |e|
+  #     end
+  #   end
+  # end
 
   # The default wrapper to be used by the FormBuilder.
   config.default_wrapper = :default
@@ -123,7 +147,7 @@ SimpleForm.setup do |config|
 
   # Custom wrappers for input types. This should be a hash containing an input
   # type as key and the wrapper that will be used for all inputs with specified type.
-  # config.wrapper_mappings = { string: :prepend }
+  config.wrapper_mappings = { rich_text: :rich_text }
 
   # Namespaces where SimpleForm should look for custom input classes that
   # override default inputs.
@@ -139,7 +163,7 @@ SimpleForm.setup do |config|
   # config.translate_labels = true
 
   # Automatically discover new inputs in Rails' autoload path.
-  # config.inputs_discovery = true
+  config.inputs_discovery = true
 
   # Cache SimpleForm inputs discovery
   # config.cache_discovery = !Rails.env.development?

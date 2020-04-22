@@ -1,0 +1,78 @@
+%section.section
+  %h2.title Visualizando acompanhamento de #{@tecitura.mulher_acompanhada.nome}
+  .card{ data: { controller: 'card' }}
+    .card-header
+      .card-header-title= t('mongoid.attributes.tecitura.mulher_acompanhada')
+    .card-content
+      %table.table.is-fullwidth
+        %tbody
+          %tr
+            %td= t('mongoid.attributes.contato.nome')+':'
+            %td= @tecitura.mulher_acompanhada.nome
+          %tr
+            %td= t('mongoid.attributes.contato.telefone')+':'
+            %td= @tecitura.mulher_acompanhada.telefone.national
+      .card{ data: { controller: 'card', card: { default: 'closed' } }}
+        .card-header
+          .card-header-title= t('mongoid.attributes.contato.endereco')
+        .card-content= @tecitura.mulher_acompanhada.endereco.texto
+        .card-image
+          %figure.image.is-4by3{src: 'https://bulma.io/images/placeholders/1280x960.png'}
+  .card{ data: { controller: 'card' }}
+    .card-header
+      .card-header-title Início
+    .card-content
+      %table.table.is-fullwidth
+        %tbody
+          %tr
+            %td= t('mongoid.attributes.tecitura.regiao')+':'
+            %td= @tecitura.regiao
+          %tr
+            %td= t('mongoid.attributes.tecitura.vinculacao')+':'
+            %td= ano_semestre(@tecitura)
+          %tr
+            %td= t('mongoid.attributes.tecitura.situacao_acolhimento')+':'
+            %td= @tecitura.situacao_acolhimento
+  .card{ data: { controller: 'card' }}
+    .card-header
+      .card-header-title Núcleos e Vínculos
+    .card-content
+      %table.table.is-fullwidth
+        %tbody
+          %tr
+            %td= t('mongoid.attributes.tecitura.nucleo_familiar')+':'
+            %td= @tecitura.nucleo_familiar
+          %tr
+            %td= t('mongoid.attributes.tecitura.vinc_familiares_comunitarios')+':'
+            %td= @tecitura.vinc_familiares_comunitarios
+  .card{ data: { controller: 'card' }}
+    .card-header
+      .card-header-title Referências
+    .card-content
+      %table.table.is-fullwidth
+        %tbody
+          %tr
+            %td= t('mongoid.attributes.tecitura.ref_atencao_primaria')+':'
+            %td= @tecitura.ref_atencao_primaria
+          %tr
+            %td= t('mongoid.attributes.tecitura.ref_assistencia_social')+':'
+            %td= @tecitura.ref_assistencia_social
+  .card{ data: { controller: 'card' }}
+    .card-header
+      .card-header-title Equipe
+    .card-content
+      %table.table.is-fullwidth
+        %tbody
+          %tr
+            %td= t('mongoid.attributes.tecitura.ref_padhu')+':'
+            %td= @tecitura.ref_padhu
+          %tr
+            %td= t('mongoid.attributes.tecitura.equipe_tecitura')+':'
+            %td= @tecitura.equipe_tecitura
+          %tr
+            %td= t('mongoid.attributes.tecitura.responsaveis')+':'
+            %td= @tecitura.responsaveis
+
+.buttons
+  = link_to 'Voltar', tecituras_path, class: 'button is-link'
+  = link_to 'Editar', edit_tecitura_path(@tecitura), class: 'button is-link'
