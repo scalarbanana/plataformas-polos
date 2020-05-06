@@ -20,8 +20,6 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 # Mongoid is an ODM (Object Document Mapper) Framework for MongoDB
 gem 'mongoid', '~> 7.1'
-# An implementation of the BSON specification in Ruby.
-gem 'bson_ext', '~> 1.5'
 # A Mongoid Extension that simplifies the use of MongoDB spatial features.
 gem 'mongoid-geospatial', '~> 5.1'
 # Complete Ruby geocoding solution.
@@ -40,9 +38,6 @@ gem 'pundit', '~> 2.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-
-# Report GC usage data to StatsD.
-gem 'barnes', '~> 0.0.8'
 
 group :development, :test do
   gem 'i18n-debug', '~> 1.2'

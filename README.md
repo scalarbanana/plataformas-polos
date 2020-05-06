@@ -1,6 +1,33 @@
-# README
+# PlataformasPolos
 
-This README would normally document whatever steps are necessary to get the
+## README
+
+### Dependências e versões
+| | |
+| ---------------- | ----- |
+| Ruby             | 2.7.1 |
+| Bundler          | 2.1.4 |
+| NodeJS           | 10    |
+| Servidor MongoDB | 4.*   |
+
+### Variáveis de ambiente
+| Chave | Valor |
+|---|---|
+| HOST | FQDN de acesso à aplicação |
+| RAILS, NODE, RACK (_ENV) | Ambiente da aplicação, pode ser `development`, `test` ou `production` |
+| (DB_) HOST, NAME, USER, PASSWORD | Hostname, collection, nome de usuário e senha do MongoDB |
+| (SMTP_) ADDRESS, USER, PASSWORD, DOMAIN | Endereço, usuário e senha do gateway para envio de emails, e o domínio HELO |
+
+### Setup banco de dados
+É necessário criar uma collection (como o nome especificado em `DB_NAME`) e um usuário (`DB_USER`) com as seguintes permissões:
+```json
+['readWrite','dbAdmin']
+```
+
+### Testes
+Utilizam RSpec e Shoulda para declarações, Capybara para testes de aceitação no browser e Faker para gerar dados de teste.
+
+<!-- This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
@@ -21,5 +48,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
-# PlataformasPolos
+* ... -->

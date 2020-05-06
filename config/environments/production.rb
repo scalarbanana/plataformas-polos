@@ -43,7 +43,7 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -60,13 +60,14 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "PlataformasPolos_production"
 
   ActionMailer::Base.smtp_settings = {
-    address: 'smtp.sendgrid.net',
+    address: ENV['SMTP_ADDRESS'],
     port: 587,
     authentication: :plain,
-    enable_starttls_auto: true,
     user_name: ENV['SMTP_USER'],
     password: ENV['SMTP_PASSWORD'],
-    domain: ENV['HOST']
+    ssl: true,
+    enable_starttls_auto: true,
+    domain: ENV['SMTP_DOMAIN']
   }
   ActionMailer::Base.delivery_method = :smtp
 
