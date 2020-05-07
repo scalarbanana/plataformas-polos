@@ -13,9 +13,9 @@
 ### Variáveis de ambiente
 | Chave | Valor |
 |---|---|
-| HOST | FQDN de acesso à aplicação |
+| FQDN | FQDN de acesso à aplicação |
 | RAILS, NODE, RACK (_ENV) | Ambiente da aplicação, pode ser `development`, `test` ou `production` |
-| (DB_) HOST, NAME, USER, PASSWORD | Hostname, collection, nome de usuário e senha do MongoDB |
+| (DB_) HOST, NAME, USER, PASSWORD | Host, collection, nome de usuário e senha do MongoDB |
 | (SMTP_) ADDRESS, USER, PASSWORD, DOMAIN | Endereço, usuário e senha do gateway para envio de emails, e o domínio HELO |
 
 ### Setup banco de dados

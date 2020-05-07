@@ -32,5 +32,6 @@ ENV RACK_ENV=production \
     RAILS_LOG_TO_STDOUT=true \
     RACK_TIMEOUT_SERVICE_TIMEOUT=30
 
-ENTRYPOINT ["/bin/sh", "-c"]
-CMD "bundle exec puma -C config/puma.rb"
+RUN SECRET_KEY_BASE=dummy bin/rake assets:precompile
+
+CMD bundle exec puma -C config/puma.rb
