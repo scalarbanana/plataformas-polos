@@ -14,7 +14,10 @@
         %td= @user.roles.texts.join(', ')
       %tr
         %td Último login:
-        %td= time_ago_in_words @user.last_sign_in_at
+        - unless @user.last_sign_in_at.blank?
+          %td= time_ago_in_words @user.last_sign_in_at
+        - else
+          %td Nunca
 
 .buttons
   = link_to 'Voltar', users_path, class: 'button is-link'

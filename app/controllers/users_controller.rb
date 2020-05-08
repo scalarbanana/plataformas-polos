@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   # POST /users
   def create
     authorize User
-    @user = User.new(user_params)
+    @user = User.new user_params
 
     if @user.save
       redirect_to @user, notice: 'Usuário criado com sucesso.'
@@ -56,14 +56,14 @@ class UsersController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def user_params
-    user = params.fetch(:user)
+    user = params.fetch :user
 
-    user.delete(:roles) unless policy(@user).update_roles?
+    user.delete :roles unless policy(current_user).update_roles?
     if user[:password].blank? && user[:password_confirmation].blank?
-      user.delete(:password)
-      user.delete(:password_confirmation)
+      user.delete :password
+      user.delete :password_confirmation
     end
 
-    user.permit(:name, :email, :password, :password_confirmation, roles: [])
+    user.permit :name, :email, :password, :password_confirmation, roles: []
   end
 end
