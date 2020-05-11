@@ -18,6 +18,7 @@ class TecituraPolicy < ApplicationPolicy
   end
 
   def destroy?
-    user.roles.tecitura? && user.roles.admin?
+    roles = user.roles
+    roles.tecitura? && roles.admin?
   end
 end

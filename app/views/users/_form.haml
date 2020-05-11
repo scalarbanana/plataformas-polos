@@ -1,8 +1,8 @@
-= simple_form_for @user do |f|
+= simple_form_for user do |f|
   = f.error_notification
   = f.input :name
   = f.input :email
-  = f.input :roles, disabled: !policy(@user).update_roles?,                      |
+  = f.input :roles, disabled: !policy(user).update_roles?,                      |
     input_html:       { size: 2 }, wrapper_html: { class: 'select is-multiple' } |
   = f.input :password
   = f.input :password_confirmation, label: 'Confirmação da Senha'

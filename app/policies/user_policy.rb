@@ -27,10 +27,11 @@ class UserPolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      if user.roles.admin?
+      roles = user.roles
+      if roles.admin?
         scope.all
       else
-        scope.in(roles: user.roles.map(&:to_sym))
+        scope.in(roles: roles.map(&:to_sym))
       end
     end
   end

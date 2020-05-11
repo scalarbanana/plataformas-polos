@@ -24,9 +24,18 @@ class Tecitura
 
   accepts_nested_attributes_for :mulher_acompanhada, :contatos
 
-  validates :vinculacao_ano, numericality: { allow_blank: false, only_integer: true,
-                                             less_than_or_equal_to: ->(_tecitura) { Date.current.year },
-                                             greater_than: 2000 }
-  validates :vinculacao_semestre, numericality: { allow_blank: false, only_integer: true,
-                                                  less_than_or_equal_to: 2, greater_than_or_equal_to: 1 }
+  validates :vinculacao_ano,
+            numericality: {
+              allow_blank: false,
+              only_integer: true,
+              less_than_or_equal_to: ->(_) { Date.current.year },
+              greater_than: 2000
+            }
+  validates :vinculacao_semestre,
+            numericality: {
+              allow_blank: false,
+              only_integer: true,
+              less_than_or_equal_to: 2,
+              greater_than_or_equal_to: 1
+            }
 end

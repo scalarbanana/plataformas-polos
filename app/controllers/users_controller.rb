@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = policy_scope User
+    @users = policy_scope(User)
   end
 
   # GET /users/1
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    authorize User
+    authorize(User)
     @user = User.new
   end
 
@@ -22,48 +22,49 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    authorize User
-    @user = User.new user_params
+    authorize(User)
+    @user = User.new(user_params)
 
     if @user.save
-      redirect_to @user, notice: 'Usuário criado com sucesso.'
+      redirect_to(@user, notice: 'Usuário criado com sucesso.')
     else
-      render :new
+      render(:new)
     end
   end
 
   # PATCH/PUT /users/1
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: 'Usuário atualizado com sucesso.'
+      redirect_to(@user, notice: 'Usuário atualizado com sucesso.')
     else
-      render :edit
+      render(:edit)
     end
   end
 
   # DELETE /users/1
   def destroy
-    @user.destroy
-    redirect_to users_url, notice: 'Usuário deletado com sucesso.'
+    @user.destroy!
+    redirect_to(users_url, notice: 'Usuário deletado com sucesso.')
   end
 
   private
 
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    @user = authorize User.find(params[:id])
+    @user = authorize(User.find(params[:id]))
   end
 
   # Only allow a trusted parameter "white list" through.
+  # :reek:FeatureEnvy
   def user_params
-    user = params.fetch :user
+    user = params.fetch(:user)
 
-    user.delete :roles unless policy(current_user).update_roles?
+    user.delete(:roles) unless policy(current_user).update_roles?
     if user[:password].blank? && user[:password_confirmation].blank?
-      user.delete :password
-      user.delete :password_confirmation
+      user.delete(:password)
+      user.delete(:password_confirmation)
     end
 
-    user.permit :name, :email, :password, :password_confirmation, roles: []
+    user.permit(:name, :email, :password, :password_confirmation, roles: [])
   end
 end
