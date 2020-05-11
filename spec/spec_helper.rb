@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 require('simplecov')
+require('coveralls')
+
+SimpleCov.formatters = [
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter
+]
 SimpleCov.start('rails') do
   enable_coverage :branch
 end
@@ -47,9 +53,11 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  config.before(:suite) do
-    Rails.application.load_seed # loading seeds
-  end
+  # loading seeds
+  # config.before(:suite) do
+  #
+  #   Rails.application.load_seed
+  # end
 
   # This option will default to `:apply_to_host_groups` in RSpec 4 (and will
   # have no way to turn it off -- the option exists only for backwards

@@ -57,6 +57,8 @@ group :development, :test do
 end
 
 group :test do
+  # Coveralls for Ruby Test Coverage
+  gem 'coveralls', require: false
   # Simple one-liner tests for common Rails functionality
   gem 'shoulda-matchers', '~> 4.3'
   # SimpleCov is a code coverage analysis tool for Ruby
