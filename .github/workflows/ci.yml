@@ -1,15 +1,10 @@
 name: CI
 
 on:
-  pull_request:
-    branches:
-      - master
-      - develop
   push:
     branches:
       - master
       - develop
-      - release/*
 
 jobs:
   lint:
@@ -86,3 +81,31 @@ jobs:
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
         run: bin/rspec
+  deploy:
+    needs:
+      - lint
+      - test
+    runs-on: ubuntu-latest
+    env:
+      WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+    steps:
+      - name: Trigger staging webhook
+        if: github.ref == 'refs/heads/develop'
+        env: 
+          WEBHOOK_TOKEN: ${{ secrets.WEBHOOK_STAGING }}
+        run: |
+          curl -X POST \
+          "$WEBHOOK_URL&token=$WEBHOOK_TOKEN" \
+          -H 'Content-Length: 2' \
+          -H 'Content-Type: application/json; charset=utf-8' \
+          -d '{}'
+      - name: Trigger production webhook
+        if: github.ref == 'refs/heads/master'
+        env: 
+          WEBHOOK_TOKEN: ${{ secrets.WEBHOOK_PRODUCTION }}
+        run: |
+          curl -X POST \
+          "$WEBHOOK_URL&token=$WEBHOOK_TOKEN" \
+          -H 'Content-Length: 2' \
+          -H 'Content-Type: application/json; charset=utf-8' \
+          -d '{}'
