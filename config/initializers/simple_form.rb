@@ -14,38 +14,38 @@ SimpleForm.setup do |config|
   # wrapper, change the order or even add your own to the
   # stack. The options given below are used to wrap the
   # whole input.
-  config.wrappers :default, class: :field do |b|
+  config.wrappers(:default, class: :field) do |b|
     ## Extensions enabled by default
     # Any of these extensions can be disabled for a
     # given input by passing: `f.input EXTENSION_NAME => false`.
     # You can make any of these extensions optional by
     # renaming `b.use` to `b.optional`.
-    b.use :html5
+    b.use(:html5)
 
     # Calculates placeholders automatically from I18n
     # You can also pass a string as f.input placeholder: "Placeholder"
-    b.optional :placeholder
+    b.optional(:placeholder)
 
     ## Optional extensions
     # Calculates maxlength from length validations for string inputs
     # and/or database column lengths
-    b.optional :maxlength
+    b.optional(:maxlength)
     # Calculate minlength from length validations for string inputs
-    b.optional :minlength
+    b.optional(:minlength)
     # Calculates pattern from format validations for string inputs
-    b.optional :pattern
+    b.optional(:pattern)
     # Calculates min and max from length validations for numeric inputs
-    b.optional :min_max
+    b.optional(:min_max)
     # Calculates readonly automatically from readonly attributes
-    b.optional :readonly
+    b.optional(:readonly)
 
     ## Inputs
-    b.use :label, class: 'label'
-    b.wrapper :control, tag: :div, class: 'control' do |c|
-      c.use :input, class: 'input', error_class: 'is-danger', valid_class: 'is-success'
+    b.use(:label, class: 'label')
+    b.wrapper(:control, tag: :div, class: 'control') do |c|
+      c.use(:input, class: 'input', error_class: 'is-danger', valid_class: 'is-success')
     end
-    b.use :hint, wrap_with: { tag: :p, class: 'help is-info' }
-    b.use :error, wrap_with: { tag: :p, class: 'help is-danger' }
+    b.use(:hint, wrap_with: { tag: :p, class: 'help is-info' })
+    b.use(:error, wrap_with: { tag: :p, class: 'help is-danger' })
 
     ## full_messages_for
     # If you want to display the full error message for the attribute, you can
