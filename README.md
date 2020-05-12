@@ -1,5 +1,5 @@
 # PlataformasPolos
-
+[![Coverage Status](https://coveralls.io/repos/github/asantos07/plataformas-polos/badge.svg)](https://coveralls.io/github/asantos07/plataformas-polos)
 ## README
 
 ### Dependências e versões
