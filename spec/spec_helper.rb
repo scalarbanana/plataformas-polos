@@ -7,9 +7,7 @@ SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
-SimpleCov.start('rails') do
-  enable_coverage :branch
-end
+SimpleCov.start('rails')
 
 # require 'codecov'
 # SimpleCov.formatter = SimpleCov::Formatter::Codecov

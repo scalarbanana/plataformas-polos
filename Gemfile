@@ -58,11 +58,11 @@ end
 
 group :test do
   # Coveralls for Ruby Test Coverage
-  gem 'coveralls', require: false
+  gem 'coveralls', '~> 0.8.22', require: false
   # Simple one-liner tests for common Rails functionality
   gem 'shoulda-matchers', '~> 4.3'
   # SimpleCov is a code coverage analysis tool for Ruby
-  gem 'simplecov', '~> 0.18.5'
+  gem 'simplecov', '~> 0.16.1'
   # A library for generating fake data such as names, addresses, and phone numbers.
   gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
   # rspec-rails is a testing framework for Rails 5+.
