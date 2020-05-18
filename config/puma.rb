@@ -8,6 +8,8 @@ rackup(DefaultRackup)
 port(ENV['PORT'] || 3000, ENV['HOST'] || 'localhost')
 environment(ENV['RACK_ENV'] || 'development')
 
+worker_timeout(3600) if ENV['RAILS_ENV'] == 'development'
+
 preload_app!
 
 on_worker_boot do

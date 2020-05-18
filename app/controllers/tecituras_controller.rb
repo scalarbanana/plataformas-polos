@@ -14,9 +14,8 @@ class TeciturasController < ApplicationController
   # GET /tecituras/new
   def new
     authorize(Tecitura)
-    @tecitura                             = Tecitura.new
-    @tecitura.mulher_acompanhada          = Contato.new
-    @tecitura.mulher_acompanhada.endereco = Endereco.new
+    @tecitura = Tecitura.new
+    @tecitura.relatorios.build
   end
 
   # GET /tecituras/1/edit
@@ -56,7 +55,7 @@ class TeciturasController < ApplicationController
   end
 
   # Only allow a trusted parameter "white list" through.
-  def tecitura_params # rubocop:todo Metrics/MethodLength
+  def tecitura_params # rubocop:disable Metrics/MethodLength
     params.require(:tecitura)
           .permit(:vinculacao_ano,
                   :vinculacao_semestre,
@@ -73,6 +72,7 @@ class TeciturasController < ApplicationController
                   :ref_padhu,
                   :responsaveis,
                   mulher_acompanhada_attributes:
-                                      [:nome, :telefone, endereco_attributes: [:texto]])
+                                      [:id, :nome, :telefone, endereco_attributes: %i[id texto]],
+                  relatorios_attributes: %i[id document ano semestre _destroy])
   end
 end

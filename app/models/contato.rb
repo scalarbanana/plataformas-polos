@@ -4,11 +4,10 @@ class Contato
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  embedded_in :tecitura
-
   field :nome, type: String
   field :telefone, type: Types::Phone
-  embeds_one :endereco
+
+  embeds_one :endereco, autobuild: true
 
   accepts_nested_attributes_for :endereco
 

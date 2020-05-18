@@ -11,5 +11,5 @@ class Endereco
   field :coordenadas, type: Array
 
   geocoded_by :texto, coordinates: :coordenadas
-  after_validation :geocode, coordinates: :coordenadas
+  after_validation :geocode, coordinates: :coordenadas, if: :texto_changed?
 end

@@ -22,6 +22,8 @@ gem('turbolinks', '~> 5')
 gem('mongoid', '~> 7.1')
 # A Mongoid Extension that simplifies the use of MongoDB spatial features.
 gem('mongoid-geospatial', '~> 5.1')
+gem('shrine', '~> 3.0')
+gem('shrine-mongoid', '~> 1.0')
 # Complete Ruby geocoding solution.
 gem('geocoder', '~> 1.6')
 # Ruby gem for phone validation and formatting using google libphonenumber library data
@@ -82,3 +84,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem('tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby])
+
+gem('marcel', '~> 0.3.3')
+
+gem('haml_lint', '~> 0.35.0', require: false)
