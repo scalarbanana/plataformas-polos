@@ -34,5 +34,4 @@ class Relatorio
               greater_than_or_equal_to: 1
             }
   validates :document, :semestre, :ano, presence: true
-
 end

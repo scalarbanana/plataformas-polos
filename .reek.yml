@@ -1,9 +1,10 @@
 exclude_paths:
   - vendor
   - bin
+  - public
+  - lib
 
 detectors:
-  # TODO: re-enable documentation checking, as soon as we have any
   IrresponsibleModule:
     enabled: false
   UtilityFunction:

@@ -22,7 +22,9 @@ gem('turbolinks', '~> 5')
 gem('mongoid', '~> 7.1')
 # A Mongoid Extension that simplifies the use of MongoDB spatial features.
 gem('mongoid-geospatial', '~> 5.1')
+# File attachment toolkit for Ruby applications
 gem('shrine', '~> 3.0')
+# Mongoid integration for shrine
 gem('shrine-mongoid', '~> 1.0')
 # Complete Ruby geocoding solution.
 gem('geocoder', '~> 1.6')
@@ -37,23 +39,13 @@ gem('devise', '~> 4.7')
 gem('devise-i18n', '~> 1.9')
 # Minimal authorization through OO design and pure Ruby classes
 gem('pundit', '~> 2.1')
+# Find the mime type of files, examining file, filename and declared type
+gem('marcel', '~> 0.3.3')
 
 # Reduces boot times through caching; required in config/boot.rb
 gem('bootsnap', '>= 1.4.2', require: false)
 
 group :development, :test do
-  # Easily see which translations are being looked up
-  gem 'i18n-debug', '~> 1.2'
-  # A code metric tool for rails projects
-  gem 'rails_best_practices', '~> 1.20', require: false
-  # Code smell detector for Ruby
-  gem 'reek', '~> 6.0', require: false
-  # A Ruby static code analyzer and code formatter
-  gem 'rubocop', '~> 0.81.0', require: false
-  gem 'rubocop-rails', '~> 2.5', require: false
-  gem 'rubocop-rspec', require: false
-  # A free vulnerability scanner specifically designed for Ruby on Rails
-  gem 'brakeman', '~> 4.8'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
@@ -74,6 +66,22 @@ group :test do
 end
 
 group :development do
+  # haml-lint is a tool to help keep your HAML files clean and readable
+  gem('haml_lint', '~> 0.35.0', require: false)
+  # Easily see which translations are being looked up
+  gem 'i18n-debug', '~> 1.2'
+  # A code metric tool for rails projects
+  gem 'rails_best_practices', '~> 1.20', require: false
+  # Code smell detector for Ruby
+  gem 'reek', '~> 6.0', require: false
+  # A Ruby static code analyzer and code formatter
+  gem 'rubocop', '~> 0.81.0', require: false
+  gem 'rubocop-rails', '~> 2.5', require: false
+  gem 'rubocop-rspec', require: false
+  # A free vulnerability scanner specifically designed for Ruby on Rails
+  gem 'brakeman', '~> 4.8'
+  # A fully configurable and extendable Git hook manager
+  gem('overcommit', '~> 0.53.0', require: false)
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
@@ -84,7 +92,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem('tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby])
-
-gem('marcel', '~> 0.3.3')
-
-gem('haml_lint', '~> 0.35.0', require: false)
