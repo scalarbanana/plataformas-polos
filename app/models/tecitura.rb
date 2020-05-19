@@ -3,10 +3,11 @@
 class Tecitura
   include Mongoid::Document
   include Mongoid::Timestamps
+  extend Enumerize
 
   field :vinculacao_ano, type: Integer
   field :vinculacao_semestre, type: Integer
-  field :situacao_atual, type: String
+  field :situacao_atual, type: Symbol
   field :nucleo_familiar, type: String
   field :regiao, type: String
   field :situacao_acolhimento, type: String
@@ -14,15 +15,17 @@ class Tecitura
   field :ref_assistencia_social, type: String
   field :vinc_familiares_comunitarios, type: String
   field :situacao_juridica, type: String
-  field :relatorios, type: String
   field :equipe_tecitura, type: String
   field :ref_padhu, type: String
   field :responsaveis, type: String
 
-  embeds_one :mulher_acompanhada, class_name: 'Contato'
-  embeds_many :contatos
+  enumerize :situacao_atual, in: %i[ativo em_monitoramento], default: :ativo
+  embeds_one :mulher_acompanhada, class_name: 'Contato', autobuild: true
+  embeds_many :relatorios, cascade_callbacks: true
 
-  accepts_nested_attributes_for :mulher_acompanhada, :contatos
+  accepts_nested_attributes_for :mulher_acompanhada
+  accepts_nested_attributes_for :relatorios,
+                                allow_destroy: true
 
   validates :vinculacao_ano,
             numericality: {

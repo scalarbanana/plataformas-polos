@@ -2,37 +2,49 @@
   = f.error_notification
   = f.simple_fields_for :mulher_acompanhada do |fm|
     .field.is-horizontal
-      .field-label.is-normal
+      .field-label
         %label.label Mulher Acompanhada:
       .field-body
-        = fm.input :nome, placeholder: "Nome", label: false,  control_html: { class: 'is-expanded' }
-        = fm.input :telefone, as: :tel, placeholder: "Telefone", label: false,  control_html: { class: 'is-expanded' }
+        = fm.input :nome, placeholder: "Nome", label: false,  control_html: { class: 'control is-expanded' }
+        = fm.input :telefone, as: :tel, placeholder: "Telefone", label: false,  control_html: { class: 'control is-expanded' }
     .field.is-horizontal
-      .field-label.is-normal
+      .field-label
       .field-body
-        = fm.simple_fields_for :endereco do |fme|
-          = fme.input :texto, placeholder: 'Endereço', label: false, wrapper_html: { class: 'is-expanded' }
+        .field
+          = fm.simple_fields_for :endereco do |fme|
+            = fme.input :texto, placeholder: 'Endereço', label: false, wrapper_html: false
   .field.is-horizontal
     .field-label.is-normal
       %label.label Vinculação:
     .field-body
-      = f.input :vinculacao_ano, label: false, collection: (2000..Date.current.year).reverse_each, prompt: 'Ano',
+      = f.input :vinculacao_ano, label: false, collection: ano_collection, prompt: 'Ano',
         wrapper_html: false, control_html: { class: 'select is-fullwidth' }
       %label.label.is-large /&nbsp&nbsp
-      = f.input :vinculacao_semestre, label: false, collection: [['1º', 1], ['2º', 2]], prompt: 'Semestre',
+      = f.input :vinculacao_semestre, label: false, collection: semestre_collection, prompt: 'Semestre',
         wrapper_html: false, control_html: { class: 'select is-fullwidth' }
-  = f.input :regiao, input_html: { list: 'regioes' }
-  %datalist#regioes
-    - Tecitura.where(:regiao.ne => nil).only(:regiao).map(&:regiao).each do |regiao|
-      %option{value: regiao}
-  = f.input :situacao_atual, as: :text
-  = f.input :nucleo_familiar, as: :text
-  = f.input :situacao_acolhimento, as: :text
-  = f.input :ref_atencao_primaria, as: :text
-  = f.input :ref_assistencia_social, as: :text
-  = f.input :vinc_familiares_comunitarios, as: :text
-  = f.input :situacao_juridica, as: :text
-  -# = f.input :relatorios, as: :file
+  .field.is-horizontal
+    .field-body
+      %datalist#regioes
+        - Tecitura.where(:regiao.ne => nil).only(:regiao).map(&:regiao).each do |regiao|
+          %option{value: regiao}
+      = f.input :regiao, input_html: { list: 'regioes' }, control_html: { class: 'select is-fullwidth' }
+      = f.input :situacao_atual, collection: Tecitura.situacao_atual.options, control_html: { class: 'select is-fullwidth' }
+  = f.input(:nucleo_familiar, as: :text, input_html: { class: 'textarea' })
+  = f.input(:situacao_acolhimento, as: :text, input_html: { class: 'textarea' })
+  = f.input :ref_atencao_primaria, as: :text, input_html: { class: 'textarea' }
+  = f.input :ref_assistencia_social, as: :text, input_html: { class: 'textarea' }
+  = f.input :vinc_familiares_comunitarios, as: :text, input_html: { class: 'textarea' }
+  = f.input :situacao_juridica, as: :text, input_html: { class: 'textarea' }
+  = field_set_tag(nil, data: { controller: 'nested-form' }, class: 'field') do
+    %legend.label Relatórios
+    %template{ data: { target: "nested-form.template" }}
+      = f.simple_fields_for(:relatorios, Relatorio.new, child_index: 'TEMPLATE', defaults: { wrapper: false, label: false }) do |fr|
+        = render('form_relatorios', form: fr, template: true)
+    %div{ data: { target: "nested-form.list" }}
+      = f.simple_fields_for(:relatorios, defaults: { wrapper: false, label: false }) do |fr|
+        = render('form_relatorios', form: fr)
+    .buttons.is-fullwidth
+      %button.button{ data: { action: "nested-form#add_association" }} Adicionar Relatório
   = f.input :equipe_tecitura
   = f.input :ref_padhu
   = f.input :responsaveis

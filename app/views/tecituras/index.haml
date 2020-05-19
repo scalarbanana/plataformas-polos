@@ -12,7 +12,7 @@
     - @tecituras.each do |tecitura|
       %tr
         %td= tecitura.mulher_acompanhada.nome
-        %td= ano_semestre(tecitura)
+        %td= ano_semestre(tecitura.vinculacao_ano, tecitura.vinculacao_semestre)
         %td= tecitura.regiao
         %td= tecitura.responsaveis
         %td

@@ -29,7 +29,7 @@
             %td= @tecitura.regiao
           %tr
             %td= t('mongoid.attributes.tecitura.vinculacao')+':'
-            %td= ano_semestre(@tecitura)
+            %td= ano_semestre(@tecitura.vinculacao_ano, @tecitura.vinculacao_semestre)
           %tr
             %td= t('mongoid.attributes.tecitura.situacao_acolhimento')+':'
             %td= @tecitura.situacao_acolhimento
@@ -72,6 +72,23 @@
           %tr
             %td= t('mongoid.attributes.tecitura.responsaveis')+':'
             %td= @tecitura.responsaveis
+  .card{ data: { controller: 'card' }}
+    .card-header
+      .card-header-title
+        Relatórios
+    .card-content
+      %table.table.is-fullwidth
+        %thead
+          %tr
+            %th Ano/Semestre
+            %th Arquivo
+            %th Permalink
+        %tbody
+          - @tecitura.relatorios.each do |relatorio|
+            %tr
+              %td= ano_semestre(relatorio.ano, relatorio.semestre)
+              %td= relatorio.document.metadata["filename"]
+              %td.has-text-centered= link_to "🔗", relatorio.document.download_url
 
 .buttons
   = link_to 'Voltar', tecituras_path, class: 'button is-link'
