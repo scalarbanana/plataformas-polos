@@ -1,0 +1,34 @@
+%p#notice= notice
+%p
+  %strong Resumo:
+  = @cartografia.resumo
+%p
+  %strong Referencias:
+  = @cartografia.referencias
+%p
+  %strong Fonte:
+  = @cartografia.fonte
+%p
+  %strong Data:
+  = @cartografia.data
+%p
+  %strong Local:
+  = @cartografia.local
+%p
+  %strong Descricao:
+  = @cartografia.descricao
+%p
+  %strong Temas:
+  = @cartografia.temas
+%p
+  %strong Observacoes:
+  = @cartografia.observacoes
+%p
+  %strong Citacoes:
+  = @cartografia.citacoes
+%p
+  %strong Responsavel:
+  = @cartografia.responsavel
+= link_to 'Edit', edit_cartografias_path(@cartografia)
+|
+= link_to 'Back', cartografia_path

@@ -6,6 +6,9 @@
 # and recreated between test runs. Don't rely on the data there!
 
 Rails.application.configure do
+  # https://github.com/faker-ruby/faker/issues/278
+  config.i18n.enforce_available_locales = false
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   config.cache_classes = false

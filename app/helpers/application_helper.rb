@@ -5,19 +5,19 @@ module ApplicationHelper
     case request.env['PATH_INFO']
     when '/'
       'dashboard'
+    when /^#{cartografias_path}/
+      'cartografias'
     when /^#{tecituras_path}/
       'tecitura'
     when /^#{users_path}/
       'users'
-    else
-      ''
     end
   end
 
   def notification_class(type)
     case type.to_sym
-    when :sucess
-      'is-sucess'
+    when :success
+      'is-success'
     when :notice
       'is-info'
     when :alert

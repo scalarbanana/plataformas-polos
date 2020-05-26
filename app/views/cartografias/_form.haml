@@ -1,0 +1,33 @@
+= form_with(model: cartografia, local: true) do |form|
+  .field
+    = form.label :resumo
+    = form.text_field :resumo
+  .field
+    = form.label :referencias
+    = form.text_field :referencias
+  .field
+    = form.label :fonte
+    = form.text_field :fonte
+  .field
+    = form.label :data
+    = form.date_select :data
+  .field
+    = form.label :local
+    = form.text_field :local
+  .field
+    = form.label :descricao
+    = form.text_field :descricao
+  .field
+    = form.label :temas
+    = form.text_field :temas
+  .field
+    = form.label :observacoes
+    = form.text_field :observacoes
+  .field
+    = form.label :citacoes
+    = form.text_field :citacoes
+  .field
+    = form.label :responsavel
+    = form.text_field :responsavel
+  .actions
+    = form.submit

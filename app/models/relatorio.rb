@@ -14,21 +14,19 @@ class Relatorio
   after_save do
     document_attacher.__send__(:mongoid_after_save)
   end
-
+  # Solução temporária para https://github.com/shrinerb/shrine-mongoid/issues/5
   after_destroy do
     document_attacher.__send__(:mongoid_after_destroy)
   end
 
   validates :ano,
             numericality: {
-              allow_blank: false,
               only_integer: true,
               less_than_or_equal_to: ->(_) { Date.current.year },
               greater_than: 2000
             }
   validates :semestre,
             numericality: {
-              allow_blank: false,
               only_integer: true,
               less_than_or_equal_to: 2,
               greater_than_or_equal_to: 1

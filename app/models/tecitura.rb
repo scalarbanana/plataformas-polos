@@ -8,16 +8,16 @@ class Tecitura
   field :vinculacao_ano, type: Integer
   field :vinculacao_semestre, type: Integer
   field :situacao_atual, type: Symbol
-  field :nucleo_familiar, type: String
-  field :regiao, type: String
-  field :situacao_acolhimento, type: String
-  field :ref_atencao_primaria, type: String
-  field :ref_assistencia_social, type: String
-  field :vinc_familiares_comunitarios, type: String
-  field :situacao_juridica, type: String
-  field :equipe_tecitura, type: String
-  field :ref_padhu, type: String
-  field :responsaveis, type: String
+  field :nucleo_familiar
+  field :regiao
+  field :situacao_acolhimento
+  field :ref_atencao_primaria
+  field :ref_assistencia_social
+  field :vinc_familiares_comunitarios
+  field :situacao_juridica
+  field :equipe_tecitura
+  field :ref_padhu
+  field :responsaveis
 
   enumerize :situacao_atual, in: %i[ativo em_monitoramento], default: :ativo
   embeds_one :mulher_acompanhada, class_name: 'Contato', autobuild: true
