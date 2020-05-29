@@ -32,3 +32,15 @@
 pt-BR:
   pundit:
     default: 'Você não está autorizado a fazer isto.'
+  cartografias:
+    show:
+      resumo: Resumo
+      referencias: Referências
+      fonte: Fonte
+      data: Data
+      local: Local
+      descricao: Descrição
+      temas: Temas
+      observacoes: Observações
+      citacoes: Citações
+      responsavel: Responsável

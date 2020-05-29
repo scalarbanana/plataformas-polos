@@ -1,33 +1,26 @@
-%h2 PADHu/Cartografias
-%table
+%table.table.is-hoverable.is-fullwidth
   %thead
     %tr
       %th Resumo
-      %th Referencias
       %th Fonte
       %th Data
       %th Local
-      %th Descricao
       %th Temas
-      %th Observacoes
-      %th Citacoes
       %th Responsavel
-      %th{:colspan => "3"}
+      %th
+        .buttons.is-right
+          = link_to 'Criar nova entrada', new_cartografia_path, class: 'button is-success'
   %tbody
-    - @cartografia.each do |cartografia|
+    - @cartografias.each do |cartografia|
       %tr
         %td= cartografia.resumo
-        %td= cartografia.referencias
         %td= cartografia.fonte
         %td= cartografia.data
         %td= cartografia.local
-        %td= cartografia.descricao
         %td= cartografia.temas
-        %td= cartografia.observacoes
-        %td= cartografia.citacoes
         %td= cartografia.responsavel
-        %td= link_to 'Show', cartografia
-        %td= link_to 'Edit', edit_cartografias_path(cartografia)
-        %td= link_to 'Destroy', cartografia, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
-= link_to 'Adicionar Entrada', new_cartografias_path
+        %td
+          .buttons.has-addons.is-right
+            = link_to 'Visualizar', cartografia, class: 'button is-link'
+            = link_to 'Editar', edit_cartografia_path(cartografia), class: 'button is-link'
+            = link_to 'Deletar', cartografia, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'button is-danger' if policy(cartografia).destroy?

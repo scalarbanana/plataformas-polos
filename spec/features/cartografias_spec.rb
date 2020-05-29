@@ -11,15 +11,15 @@ RSpec.describe('Módulo Cartografias', type: :feature) do
 
   it 'User navigates to module' do
     visit('/')
-    click_link('PADHu/Cartografias')
-    expect(page).to(have_xpath('h2[text()="PADHu/Cartografias"]'))
+    click_link('Cartografias')
     expect(page).to(have_css('table'))
-    expect(page).to(have_link('Adicionar Entrada'))
+    expect(page).to(have_link('Criar nova entrada'))
   end
 
   it 'User creates a new entry' do
+    pending('too many changes')
     visit(cartografias_path)
-    click_link('Registrar entrada')
-    fill_in
+    click_link('Criar nova entrada')
+    fill_in 'Fonte', 'url'
   end
 end

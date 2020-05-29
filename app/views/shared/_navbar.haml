@@ -2,11 +2,14 @@
   %ul{ data: { controller:"navbar", navbar_current_path: current_route_scope }}
     %li{ data: { target: "navbar.dashboard" }}
       %a{ href: "/" } Dashboard
-    %li{ data: { target:"navbar.users" }}
+    %li{ data: { target:"navbar.user" }}
       = link_to 'Equipe', User
     - if current_user.roles.tecitura?
       %li{ data: { target: "navbar.tecitura" }}
         = link_to 'Tecitura', Tecitura
+    - if current_user.roles.cartografia?
+      %li{ data: { target: "navbar.cartografia" }}
+        = link_to 'Cartografias', Cartografia
   .level-right
     = link_to "Minha Conta (#{current_user.name})", current_user, class: 'button is-link'
     = link_to 'Logout', destroy_user_session_path, method: :delete, class: ''

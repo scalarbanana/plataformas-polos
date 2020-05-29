@@ -6,11 +6,11 @@ module ApplicationHelper
     when '/'
       'dashboard'
     when /^#{cartografias_path}/
-      'cartografias'
+      'cartografia'
     when /^#{tecituras_path}/
       'tecitura'
     when /^#{users_path}/
-      'users'
+      'user'
     end
   end
 

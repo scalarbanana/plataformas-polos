@@ -3,25 +3,27 @@
 class CartografiasController < ApplicationController
   before_action :set_cartografia, only: %i[show edit update destroy]
 
-  # GET /cartografia
+  # GET /cartografias
   def index
-    @cartografia = Cartografia.all
+    @cartografias = policy_scope(Cartografia)
   end
 
-  # GET /cartografia/1
+  # GET /cartografias/1
   def show; end
 
-  # GET /cartografia/new
+  # GET /cartografias/new
   def new
+    authorize(Cartografia)
     @cartografia = Cartografia.new
   end
 
-  # GET /cartografia/1/edit
+  # GET /cartografias/1/edit
   def edit; end
 
-  # POST /cartografia
+  # POST /cartografias
   def create
     @cartografia = Cartografia.new(cartografia_params)
+    authorize(@cartografia)
 
     if @cartografia.save
       redirect_to(@cartografia, notice: 'Cartografia was successfully created.')
@@ -30,7 +32,7 @@ class CartografiasController < ApplicationController
     end
   end
 
-  # PATCH/PUT /cartografia/1
+  # PATCH/PUT /cartografias/1
   def update
     if @cartografia.update(cartografia_params)
       redirect_to(@cartografia, notice: 'Cartografia was successfully updated.')
@@ -39,17 +41,16 @@ class CartografiasController < ApplicationController
     end
   end
 
-  # DELETE /cartografia/1
+  # DELETE /cartografias/1
   def destroy
     @cartografia.destroy!
-    redirect_to(cartografia_url, notice: 'Cartografia was successfully destroyed.')
+    redirect_to(cartografias_path, notice: 'Cartografia was successfully destroyed.')
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_cartografia
-    @cartografia = Cartografia.find(params[:id])
+    @cartografia = authorize(policy_scope(Cartografia).find(params[:id]))
   end
 
   # Only allow a trusted parameter "white list" through.

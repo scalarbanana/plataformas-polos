@@ -1,33 +1,25 @@
-= form_with(model: cartografia, local: true) do |form|
-  .field
-    = form.label :resumo
-    = form.text_field :resumo
-  .field
-    = form.label :referencias
-    = form.text_field :referencias
-  .field
-    = form.label :fonte
-    = form.text_field :fonte
-  .field
-    = form.label :data
-    = form.date_select :data
-  .field
-    = form.label :local
-    = form.text_field :local
-  .field
-    = form.label :descricao
-    = form.text_field :descricao
-  .field
-    = form.label :temas
-    = form.text_field :temas
-  .field
-    = form.label :observacoes
-    = form.text_field :observacoes
-  .field
-    = form.label :citacoes
-    = form.text_field :citacoes
-  .field
-    = form.label :responsavel
-    = form.text_field :responsavel
-  .actions
-    = form.submit
+= simple_form_for(cartografia) do |form|
+  = form.error_notification
+  .field.is-horizontal
+    .field-label.is-normal
+      = form.label :resumo, class: 'label'
+    .field-body
+      = form.input :resumo, as: :text, label: false, input_html: { class: 'textarea' }
+  = form.input :referencias
+  = form.input :fonte
+  .field.is-horizontal
+    .field-label.is-normal
+      %label.label Data&nbspe&nbspLocal
+    .field-body
+      = form.input :data, as: :date, html5: true, label: false
+      = form.input :local, label: false
+  = form.input :descricao, as: :text, input_html: { class: 'textarea' }
+  = form.input :temas
+  = form.input :observacoes, as: :text, input_html: { class: 'textarea' }
+  = form.input :citacoes, as: :text, input_html: { class: 'textarea' }
+  = form.input :responsavel
+  .field.is-grouped.is-grouped-centered
+    .control
+      = link_to 'Voltar', cartografias_path, class: 'button is-link'
+    .control
+      = form.button :submit
