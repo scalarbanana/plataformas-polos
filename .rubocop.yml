@@ -15,6 +15,10 @@ Layout/LineLength:
   AutoCorrect: true
   IgnoredPatterns: ['(\A|\s)#']
 
+Style/AsciiComments:
+  Enabled: false
+Style/MethodCalledOnDoEndBlock:
+  Exclude: ['spec/**/*']
 Style/MissingElse:
   Enabled: false
 Style/InlineComment:
@@ -25,10 +29,13 @@ Style/DocumentationMethod:
   Enabled: false
 Style/Copyright:
   Enabled: false
+Style/MethodCallWithArgsParentheses:
+  Exclude: ['Gemfile']
 
 Bundler/GemComment:
   IgnoredGems:
     - rails-i18n
+    - haml-rails
     - devise-i18n
     - rubocop
     - rubocop-rails
@@ -36,6 +43,10 @@ Bundler/GemComment:
     - web-console
     - spring-watcher-listen
 
+RSpec/ImplicitExpect:
+  EnforcedStyle: is_expected
+RSpec/ImplicitSubject:
+  EnforcedStyle: single_statement_only
 RSpec/ExampleLength:
   Exclude:
     - spec/features/**/*

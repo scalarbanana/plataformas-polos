@@ -1,0 +1,26 @@
+= simple_form_for(cartografia) do |form|
+  = form.error_notification
+  = form.input :questao
+  .field.is-horizontal
+    .field-label.is-normal
+      = form.label :resumo, class: 'label'
+    .field-body
+      = form.input :resumo, as: :text, label: false, input_html: { class: 'textarea' }
+  = form.input :referencias
+  = form.input :fonte
+  .field.is-horizontal
+    .field-label.is-normal
+      %label.label Data&nbspe&nbspLocal
+    .field-body
+      = form.input :data, as: :date, html5: true, label: false
+      = form.input :local, label: false
+  = form.input :descricao, as: :text, input_html: { class: 'textarea' }
+  = form.input :temas
+  = form.input :observacoes, as: :text, input_html: { class: 'textarea' }
+  = form.input :citacoes, as: :text, input_html: { class: 'textarea' }
+  = form.input :responsavel
+  .field.is-grouped.is-grouped-centered
+    .control
+      = link_to 'Voltar', cartografias_path, class: 'button is-link'
+    .control
+      = form.button :submit

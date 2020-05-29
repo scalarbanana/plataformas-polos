@@ -1,6 +1,13 @@
 pt-BR:
+  enumerize:
+    cartografia:
+      questao:
+        1: Como têm atuado os órgãos/instituições do Sistema de Justiça na garantia de direitos e proteção da população em situação de rua?
+        2: Como tem sido discutido e aplicado o Direito à Moradia voltado à população em situação de rua?
+        3: Quais são as ações de cuidado à saúde dos trabalhadores da Saúde e Assistência Social?
+        4: Quais são as principais violências e violações de direitos envolvendo a população em situação de rua/mulheres/população negra?
   mongoid:
-    attributes:
+    attributes: &model-attributes
       contato:
         nome: Nome
         telefone: Telefone
@@ -23,3 +30,14 @@ pt-BR:
         responsaveis: 'Responsáveis'
         mulher_acompanhada: Mulher Acompanhada
         contatos: Contatos
+      cartografia:
+        resumo: Resumo
+        referencias: Referências
+        fonte: Fonte
+        data: Data
+        local: Local
+        descricao: Descrição
+        temas: Temas
+        observacoes: Observações
+        citacoes: Citações
+        responsavel: Responsável

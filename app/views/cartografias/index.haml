@@ -1,0 +1,26 @@
+%table.table.is-hoverable.is-fullwidth
+  %thead
+    %tr
+      %th Resumo
+      %th Fonte
+      %th Data
+      %th Local
+      %th Temas
+      %th Responsavel
+      %th
+        .buttons.is-right
+          = link_to 'Criar nova entrada', new_cartografia_path, class: 'button is-success'
+  %tbody
+    - @cartografias.each do |cartografia|
+      %tr
+        %td= cartografia.resumo
+        %td= cartografia.fonte
+        %td= cartografia.data
+        %td= cartografia.local
+        %td= cartografia.temas
+        %td= cartografia.responsavel
+        %td
+          .buttons.has-addons.is-right
+            = link_to 'Visualizar', cartografia, class: 'button is-link'
+            = link_to 'Editar', edit_cartografia_path(cartografia), class: 'button is-link'
+            = link_to 'Deletar', cartografia, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'button is-danger' if policy(cartografia).destroy?

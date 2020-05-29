@@ -1,0 +1,38 @@
+%section.section.container
+  %h3.subtitle= @cartografia.questao_text
+  %table.table.is-center
+    %tbody
+      %tr
+        %td= t('.resumo')
+        %td= @cartografia.resumo
+      %tr
+        %td= t('.fonte')
+        %td= @cartografia.fonte
+      %tr
+        %td= t('.local')
+        %td= @cartografia.local
+      %tr
+        %td= t('.referencias')
+        %td= @cartografia.referencias
+      %tr
+        %td= t('.data')
+        %td= @cartografia.data
+      %tr
+        %td= t('.descricao')
+        %td= @cartografia.descricao
+      %tr
+        %td= t('.temas')
+        %td= @cartografia.temas
+      %tr
+        %td= t('.observacoes')
+        %td= @cartografia.observacoes
+      %tr
+        %td= t('.citacoes')
+        %td= @cartografia.citacoes
+      %tr
+        %td= t('.responsavel')
+        %td= @cartografia.responsavel
+
+.buttons
+  = link_to 'Voltar', cartografias_path, class: 'button is-link'
+  = link_to 'Editar', edit_cartografia_path(@cartografia), class: 'button is-link'

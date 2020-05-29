@@ -1,0 +1,56 @@
+# Generation of Kubernetes YAML is still under development!
+#
+# Save the output of this file and use kubectl create -f to import
+# it into Kubernetes.
+#
+# Created with podman-1.9.2
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2020-05-25T23:09:29Z"
+  labels:
+    app: mongodb
+  name: mongodb
+spec:
+  containers:
+  - command:
+    - mongod
+    env:
+    - name: PATH
+      value: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    - name: TERM
+      value: xterm
+    - name: HOSTNAME
+      value: mongodb
+    - name: MONGO_VERSION
+      value: 4.2.6
+    - name: container
+      value: podman
+    - name: GOSU_VERSION
+      value: "1.12"
+    - name: MONGO_PACKAGE
+      value: mongodb-org
+    - name: MONGO_REPO
+      value: repo.mongodb.org
+    - name: GPG_KEYS
+      value: E162F504A20CDF15827F718D4B7C549A058F8B6B
+    - name: MONGO_MAJOR
+      value: "4.2"
+    - name: JSYAML_VERSION
+      value: 3.13.1
+    image: docker.io/library/mongo:latest
+    name: recursingbenz
+    ports:
+    - containerPort: 27017
+      hostPort: 27017
+      protocol: TCP
+    resources: {}
+    securityContext:
+      allowPrivilegeEscalation: true
+      capabilities: {}
+      privileged: false
+      readOnlyRootFilesystem: false
+      seLinuxOptions: {}
+    workingDir: /
+status: {}
+

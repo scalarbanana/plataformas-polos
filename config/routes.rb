@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :cartografias
   resources :tecituras
 
   scope :uploads, format: false do

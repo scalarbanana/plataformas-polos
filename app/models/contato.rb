@@ -2,9 +2,8 @@
 
 class Contato
   include Mongoid::Document
-  include Mongoid::Timestamps
 
-  field :nome, type: String
+  field :nome
   field :telefone, type: Types::Phone
 
   embeds_one :endereco, autobuild: true
