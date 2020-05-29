@@ -56,6 +56,7 @@ class CartografiasController < ApplicationController
   # Only allow a trusted parameter "white list" through.
   def cartografia_params # rubocop:disable Metrics/MethodLength
     params.require(:cartografia).permit(
+      :questao,
       :resumo,
       :referencias,
       :fonte,
