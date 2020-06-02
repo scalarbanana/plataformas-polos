@@ -10,11 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_02_205835) do
+ActiveRecord::Schema.define(version: 2020_06_02_221630) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
   enable_extension "pgcrypto"
+  enable_extension "plpgsql"
+
+  create_table "cartografias", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "questao"
+    t.string "resumo"
+    t.string "fonte"
+    t.string "local"
+    t.string "referencias"
+    t.date "data"
+    t.string "descricao"
+    t.string "temas"
+    t.string "observacoes"
+    t.string "citacoes"
+    t.string "responsavel"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "relatorios", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.integer "ano"
