@@ -19,12 +19,12 @@
     .field
       .file.is-right.is-fullwidth
         %label.file-label
-          = form.file_field(:document, class: 'file-input', data: { action: 'nested-item#updateFileName'})
+          = form.file_field(:documento, class: 'file-input', data: { action: 'nested-item#updateFileName'})
           %span.file-cta
             %span.file-icon
               %picture 📁
             %span.file-label
               Arquivo
-          %span.file-name{ data: { target: 'nested-item.fileName'}}= form.object.document&.metadata&.[]("filename")
+          %span.file-name{ data: { target: 'nested-item.fileName'}}= form.object.documento&.metadata&.[]("filename")
     = form.hidden_field(:_destroy, data: { target: 'nested-item.deleteField' })
     %button.delete.is-normal{ data: { action: 'nested-item#markForDeletion' }}

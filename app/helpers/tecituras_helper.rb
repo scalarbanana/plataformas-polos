@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module TeciturasHelper
-  def ano_semestre(ano = @tecitura.vinculacao_ano, semestre = @tecitura.vinculacao_semestre) # rubocop:disable Rails/HelperInstanceVariable (but maybe shouldn't)
+  def ano_semestre(ano = @tecitura.vinc_ano, semestre = @tecitura.vinc_semestre) # rubocop:disable Rails/HelperInstanceVariable (but maybe shouldn't)
     "#{ano}/#{semestre}"
   end
 

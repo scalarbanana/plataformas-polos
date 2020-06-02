@@ -10,12 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_02_023741) do
+ActiveRecord::Schema.define(version: 2020_06_02_205835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pgcrypto"
 
-  create_table "users", force: :cascade do |t|
+  create_table "relatorios", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.integer "ano"
+    t.integer "semestre"
+    t.jsonb "documento_data"
+    t.uuid "tecitura_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tecitura_id"], name: "index_relatorios_on_tecitura_id"
+  end
+
+  create_table "tecituras", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "nome"
+    t.string "telefone"
+    t.string "endereco"
+    t.string "latitude"
+    t.string "longitude"
+    t.integer "vinc_ano"
+    t.integer "vinc_semestre"
+    t.string "situacao_atual"
+    t.string "nucleo_familiar"
+    t.string "regiao"
+    t.string "situacao_acolhimento"
+    t.string "ref_atencao_primaria"
+    t.string "ref_assistencia_social"
+    t.string "vinc_familiares_comunitarios"
+    t.string "situacao_juridica"
+    t.string "equipe_tecitura"
+    t.string "ref_padhu"
+    t.string "responsaveis"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -35,4 +69,5 @@ ActiveRecord::Schema.define(version: 2020_06_02_023741) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "relatorios", "tecituras"
 end

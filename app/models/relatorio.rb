@@ -1,24 +1,15 @@
 # frozen_string_literal: true
 
-class Relatorio
-  include Mongoid::Document
-  include Mongoid::Timestamps
+class Relatorio < ApplicationRecord
   include ReportUploader::Attachment(:document)
 
-  field :document_data, type: Hash
-  field :ano, type: Integer
-  field :semestre, type: Integer
+  attribute :document_data, :jsonb
+  attribute :ano, :integer
+  attribute :semestre, :integer
 
   embedded_in :tecitura
 
-  after_save do
-    document_attacher.__send__(:mongoid_after_save)
-  end
-  # Solução temporária para https://github.com/shrinerb/shrine-mongoid/issues/5
-  after_destroy do
-    document_attacher.__send__(:mongoid_after_destroy)
-  end
-
+  validates :document, :semestre, :ano, presence: true
   validates :ano,
             numericality: {
               only_integer: true,
@@ -31,5 +22,4 @@ class Relatorio
               less_than_or_equal_to: 2,
               greater_than_or_equal_to: 1
             }
-  validates :document, :semestre, :ano, presence: true
 end

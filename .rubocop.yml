@@ -5,8 +5,16 @@ require:
 AllCops:
   EnabledByDefault: true
 
+Metrics/MethodLength:
+  Exclude:
+    - db/**/*
+Metrics/AbcSize:
+  Exclude:
+    - db/**/*
+
 Metrics/BlockLength:
   Exclude:
+    - db/**/*
     - config/**/*
     - spec/**/*
 

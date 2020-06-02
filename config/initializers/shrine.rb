@@ -8,6 +8,6 @@ Shrine.storages = {
   store: Shrine::Storage::FileSystem.new('uploads', prefix: 'attachments')
 }
 
-Shrine.plugin(:mongoid, callbacks: false)
+Shrine.plugin(:activerecord)
 Shrine.plugin(:pretty_location, class_underscore: :true) # rubocop:disable Lint/BooleanSymbol
 Shrine.plugin(:determine_mime_type, analyzer: :marcel)
