@@ -9,11 +9,11 @@ FactoryBot.define do
     password { 'password' }
 
     factory :admin do
-      roles { [:admin] }
+      permissions { [:admin] }
     end
 
     factory :user_cartografia do
-      roles { [:cartografia] }
+      permissions { [:cartografia] }
     end
   end
 end

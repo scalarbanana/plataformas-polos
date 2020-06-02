@@ -12,7 +12,7 @@
     %tr
       %td= user.name
       %td= user.email
-      %td= user.roles.texts.join(', ')
+      %td= user.permissions.texts.join(', ')
       %td
         .buttons.has-addons.is-right
           = link_to 'Visualizar', user, class: 'button is-link' if policy(user).show?

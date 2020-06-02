@@ -11,15 +11,15 @@ class ApplicationPolicy
   end
 
   def index?
-    user.roles.admin?
+    user.permissions.admin?
   end
 
   def show?
-    user.roles.admin?
+    user.permissions.admin?
   end
 
   def create?
-    user.roles.admin?
+    user.permissions.admin?
   end
 
   def new?
@@ -27,7 +27,7 @@ class ApplicationPolicy
   end
 
   def update?
-    user.roles.admin?
+    user.permissions.admin?
   end
 
   def edit?
@@ -35,7 +35,7 @@ class ApplicationPolicy
   end
 
   def destroy?
-    user.roles.admin?
+    user.permissions.admin?
   end
 
   class Scope

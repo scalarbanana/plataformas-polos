@@ -1,8 +1,13 @@
 # frozen_string_literal: true
 
 require('rails_helper')
+require('support/factory_bot')
 
 RSpec.describe('Logins', type: :feature) do
+  before { create(:user, email: 'test@mail.com', password: 'password') }
+
+  after { User.where(email: 'test@mail.com').destroy_all }
+
   it 'User tries to access without logging in' do
     visit '/'
     expect(page).to(have_current_path(new_user_session_url))

@@ -59,12 +59,12 @@ class UsersController < ApplicationController
   def user_params
     user = params.fetch(:user)
 
-    user.delete(:roles) unless policy(current_user).update_roles?
+    user.delete(:permissions) unless policy(current_user).update_roles?
     if user[:password].blank? && user[:password_confirmation].blank?
       user.delete(:password)
       user.delete(:password_confirmation)
     end
 
-    user.permit(:name, :email, :password, :password_confirmation, roles: [])
+    user.permit(:name, :email, :password, :password_confirmation, permissions: [])
   end
 end

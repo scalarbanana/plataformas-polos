@@ -6,32 +6,32 @@ class UserPolicy < ApplicationPolicy
   end
 
   def show?
-    user.roles.admin? || record == user
+    user.permissions.admin? || record == user
   end
 
   def create?
-    user.roles.admin?
+    user.permissions.admin?
   end
 
   def update?
-    user.roles.admin? || record == user
+    user.permissions.admin? || record == user
   end
 
   def update_roles?
-    user.roles.admin?
+    user.permissions.admin?
   end
 
   def destroy?
-    user.roles.admin? && record != user
+    user.permissions.admin? && record != user
   end
 
   class Scope < Scope
     def resolve
-      roles = user.roles
-      if roles.admin?
+      permissions = user.permissions
+      if permissions.admin?
         scope.all
       else
-        scope.in(roles: roles.map(&:to_sym))
+        scope.in(permissions: permissions.map(&:to_sym))
       end
     end
   end

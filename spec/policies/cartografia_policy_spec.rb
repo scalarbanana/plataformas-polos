@@ -13,7 +13,7 @@ RSpec.describe(CartografiaPolicy) do
     end
 
     it 'allows access if user has `cartografia` role' do
-      is_expected.to(permit(build(:user, roles: [:cartografia]), Cartografia.new))
+      is_expected.to(permit(build(:user, permissions: [:cartografia]), Cartografia.new))
     end
 
     it 'allows access if user has `admin` role' do
