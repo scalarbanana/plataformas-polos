@@ -55,7 +55,6 @@ class UsersController < ApplicationController
   end
 
   # Only allow a trusted parameter "white list" through.
-  # :reek:FeatureEnvy
   def user_params
     user = params.fetch(:user)
 

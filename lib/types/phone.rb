@@ -3,7 +3,13 @@
 module  Types
   class Phone < ActiveRecord::Type::String
     def cast(value)
-      Types::Phone.new(value)
+      return value unless Phonelib.possible?(value)
+
+      Phonelib::Phone.new(value)
+    end
+
+    def deserialize(value)
+      Phonelib::Phone.new(value)
     end
 
     def serialize(value)

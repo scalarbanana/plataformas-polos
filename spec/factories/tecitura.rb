@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require('support/faker')
-
 FactoryBot.define do
   factory :tecitura do
     nome { Faker::Name.feminine_name }

@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require('support/faker')
-
 FactoryBot.define do
   factory :cartografia do
     resumo { Faker::Lorem.sentence(word_count: 10) }

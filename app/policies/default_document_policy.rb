@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module DefaultDocumentPolicy
+  # Yes, :reek:TooManyStatements, I know
   def self.included(base)
     model_role = base.name.delete_suffix('Policy').downcase
     define_method(:index?) do

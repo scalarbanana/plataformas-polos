@@ -53,7 +53,7 @@ group :test do
   # A library for setting up Ruby objects as test data.
   gem 'factory_bot_rails', '~> 5.2'
   # A library for generating fake data such as names, addresses, and phone numbers.
-  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master', require: false
+  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
   # SimpleCov is a code coverage analysis tool for Ruby
   gem 'simplecov', '~> 0.16.1'
   # Coveralls for Ruby Test Coverage
@@ -61,7 +61,7 @@ group :test do
   # Simple one-liner tests for common Rails functionality
   gem 'shoulda-matchers', '~> 4.3'
   # Acceptance test framework for web applications
-  gem 'capybara', '~> 3.32'
+  gem 'capybara', '~> 3.32', require: false
 end
 
 group :development do
@@ -81,8 +81,6 @@ group :development do
   gem 'rubocop-rspec', require: false
   # A free vulnerability scanner specifically designed for Ruby on Rails
   gem 'brakeman', '~> 4.8'
-  # A fully configurable and extendable Git hook manager
-  gem 'overcommit', '~> 0.53.0', require: false
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'

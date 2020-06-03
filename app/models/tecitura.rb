@@ -28,17 +28,18 @@ class Tecitura < ApplicationRecord
   has_many :relatorios, dependent: :destroy
 
   geocoded_by :endereco
-  enumerize :situacao_atual, in: %i[ativo em_monitoramento], default: :ativo
+  enumerize :situacao_atual, in: %w[ativo em_monitoramento], default: 'ativo'
   accepts_nested_attributes_for :relatorios,
                                 allow_destroy: true
 
   validates :nome, presence: true
+  validates :telefone, phone: { allow_blank: true }
   validates :vinc_ano,
             numericality: {
               allow_blank: false,
               only_integer: true,
               less_than_or_equal_to: ->(_) { Date.current.year },
-              greater_than: 2000
+              greater_than_or_equal_to: 2000
             }
   validates :vinc_semestre,
             numericality: {

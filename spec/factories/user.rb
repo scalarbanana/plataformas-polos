@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require('support/faker')
-
 FactoryBot.define do
   factory :user do
     name { Faker::Name.name }

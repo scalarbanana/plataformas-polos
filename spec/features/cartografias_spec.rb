@@ -5,21 +5,16 @@ require('support/devise')
 require('support/factory_bot')
 
 RSpec.describe('Módulo Cartografias', type: :feature) do
-  before do
-    login_as(create(:user_cartografia))
-  end
+  let(:user) { create(:user_cartografia) }
+
+  before { login_as(user) }
+
+  after { user.destroy! }
 
   it 'User navigates to module' do
     visit('/')
     click_link('Cartografias')
     expect(page).to(have_css('table'))
     expect(page).to(have_link('Criar nova entrada'))
-  end
-
-  it 'User creates a new entry' do
-    pending('too many changes')
-    visit(cartografias_path)
-    click_link('Criar nova entrada')
-    fill_in 'Fonte', 'url'
   end
 end
