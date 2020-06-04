@@ -391,24 +391,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="childprocess (vbundled(3.0.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/childprocess-3.0.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/childprocess-3.0.0/spec" />
-        </CLASSES>
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/childprocess-3.0.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/childprocess-3.0.0/spec" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/childprocess-3.0.0/spec" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="code_analyzer (vbundled(0.5.1)) [path][gem]" type="rubylib">
         <properties>
           <option name="version" value="4" />
@@ -704,33 +686,33 @@
           <option name="version" value="4" />
         </properties>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/doc" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/.git" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/test" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/tasks" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/script" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/.github" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/doc" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/.git" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/tasks" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/script" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/.github" />
         </CLASSES>
         <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/doc" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/.git" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/test" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/tasks" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/script" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/.github" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/doc" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/lib" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/.git" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/tasks" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/script" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/.github" />
         </SOURCES>
         <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/doc" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/.git" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/test" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/tasks" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/script" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-a38417a97003/.github" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/bin" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/doc" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/.git" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/test" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/tasks" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/script" />
+          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/bundler/gems/faker-76cafabe6751/.github" />
         </excluded>
       </library>
     </orderEntry>
@@ -905,19 +887,6 @@
         <excluded>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/i18n-debug-1.2.0/test" />
         </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="iniparse (vbundled(1.5.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/iniparse-1.5.0/lib" />
-        </CLASSES>
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/iniparse-1.5.0/lib" />
-        </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
@@ -1231,33 +1200,6 @@
         <excluded>
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/orm_adapter-0.5.0/spec" />
           <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/orm_adapter-0.5.0/gemfiles" />
-        </excluded>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="overcommit (vbundled(0.53.0)) [path][gem]" type="rubylib">
-        <properties>
-          <option name="version" value="4" />
-        </properties>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/overcommit-0.53.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/overcommit-0.53.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/overcommit-0.53.0/config" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/overcommit-0.53.0/libexec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/overcommit-0.53.0/template-dir" />
-        </CLASSES>
-        <SOURCES>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/overcommit-0.53.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/overcommit-0.53.0/lib" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/overcommit-0.53.0/config" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/overcommit-0.53.0/libexec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/overcommit-0.53.0/template-dir" />
-        </SOURCES>
-        <excluded>
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/overcommit-0.53.0/bin" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/overcommit-0.53.0/config" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/overcommit-0.53.0/libexec" />
-          <root url="file://$MODULE_DIR$/vendor/bundle/ruby/2.7.0/gems/overcommit-0.53.0/template-dir" />
         </excluded>
       </library>
     </orderEntry>

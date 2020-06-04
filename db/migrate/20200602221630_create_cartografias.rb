@@ -7,12 +7,12 @@ class CreateCartografias < ActiveRecord::Migration[6.0]
       t.string(:resumo)
       t.string(:fonte)
       t.string(:local)
-      t.string(:referencias)
+      t.text(:referencias)
       t.date(:data)
-      t.string(:descricao)
+      t.text(:descricao)
       t.string(:temas)
-      t.string(:observacoes)
-      t.string(:citacoes)
+      t.text(:observacoes)
+      t.text(:citacoes)
       t.string(:responsavel)
 
       t.timestamps
