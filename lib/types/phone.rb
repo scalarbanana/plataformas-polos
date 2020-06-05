@@ -13,12 +13,7 @@ module  Types
     end
 
     def serialize(value)
-      case value
-      when Phonelib::Phone
-        value.full_e164
-      else
-        value.to_s
-      end
+      value.full_e164
     end
   end
 end
