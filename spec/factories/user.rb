@@ -6,11 +6,15 @@ FactoryBot.define do
     email { Faker::Internet.email }
     password { 'password' }
 
-    factory :admin do
+    trait :admin do
       permissions { [:admin] }
     end
 
-    factory :user_cartografia do
+    trait :tecitura do
+      permissions { [:tecitura] }
+    end
+
+    trait :cartografia do
       permissions { [:cartografia] }
     end
   end

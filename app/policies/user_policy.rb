@@ -30,8 +30,10 @@ class UserPolicy < ApplicationPolicy
       permissions = user.permissions
       if permissions.admin?
         scope.all
+      elsif permissions.empty?
+        scope.where(id: user.id)
       else
-        scope.in(permissions: permissions.map(&:to_sym))
+        scope.where('permissions @> ARRAY[?]::varchar[]', permissions)
       end
     end
   end

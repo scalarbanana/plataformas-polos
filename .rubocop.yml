@@ -1,5 +1,4 @@
 require:
-  - rubocop-rspec
   - rubocop-rails
 
 AllCops:
@@ -11,12 +10,10 @@ Metrics/MethodLength:
 Metrics/AbcSize:
   Exclude:
     - db/**/*
-
 Metrics/BlockLength:
   Exclude:
     - db/**/*
     - config/**/*
-    - spec/**/*
 
 Layout/LineLength:
   Max: 100
@@ -25,8 +22,6 @@ Layout/LineLength:
 
 Style/AsciiComments:
   Enabled: false
-Style/MethodCalledOnDoEndBlock:
-  Exclude: ['spec/**/*']
 Style/MissingElse:
   Enabled: false
 Style/InlineComment:
@@ -50,14 +45,3 @@ Bundler/GemComment:
     - rubocop-rspec
     - web-console
     - spring-watcher-listen
-
-RSpec/ImplicitExpect:
-  EnforcedStyle: is_expected
-RSpec/ImplicitSubject:
-  EnforcedStyle: single_statement_only
-RSpec/ExampleLength:
-  Exclude:
-    - spec/features/**/*
-RSpec/MultipleExpectations:
-  Exclude:
-    - spec/features/**/*
