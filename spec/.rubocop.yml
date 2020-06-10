@@ -17,14 +17,13 @@ Style/MethodCallWithArgsParentheses:
     - not_to
     - be
     - be_an
-
+RSpec/ExpectActual:
+  Exclude: ['routing/**/*']
 RSpec/ImplicitExpect:
   EnforcedStyle: is_expected
 RSpec/ImplicitSubject:
   EnforcedStyle: single_statement_only
 RSpec/ExampleLength:
-  Exclude:
-    - features/**/*
+  Exclude: ['features/**/*']
 RSpec/MultipleExpectations:
-  Exclude:
-    - features/**/*
+  Exclude: ['features/**/*']
