@@ -56,14 +56,19 @@ class UsersController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def user_params
-    user = params.fetch(:user)
+    user = params.require(:user).permit(
+      :name,
+      :email,
+      :password,
+      :password_confirmation,
+      permissions: []
+    )
 
-    user.delete(:permissions) unless policy(current_user).update_roles?
     if user[:password].blank? && user[:password_confirmation].blank?
-      user.delete(:password)
-      user.delete(:password_confirmation)
+      user = user.except(:password, :password_confirmation)
     end
+    user.except(:permissions) unless policy(current_user).update_roles?
 
-    user.permit(:name, :email, :password, :password_confirmation, permissions: [])
+    user
   end
 end
