@@ -1,17 +1,9 @@
 # frozen_string_literal: true
 
 require('rails_helper')
-require('shrine/storage/memory')
 
 RSpec.describe(ReportUploader) do
   subject(:attacher) { ReportUploader::Attacher.new }
-
-  before do
-    Shrine.storages = {
-      cache: Shrine::Storage::Memory.new,
-      store: Shrine::Storage::Memory.new
-    }
-  end
 
   # rubocop:disable RSpec/ExampleLength
   it 'validates mime type' do

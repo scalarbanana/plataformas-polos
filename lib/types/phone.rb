@@ -8,10 +8,6 @@ module  Types
       Phonelib::Phone.new(value)
     end
 
-    def deserialize(value)
-      Phonelib::Phone.new(value)
-    end
-
     def serialize(value)
       if value.is_a?(Phonelib::Phone)
         value.full_e164

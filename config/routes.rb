@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :tecituras
 
   scope :uploads, format: false do
-    get 'reports/*rest', to: 'downloads#report'
+    get 'reports/*file', to: 'downloads#report'
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
