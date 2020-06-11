@@ -2,6 +2,7 @@
 
 FactoryBot.define do
   factory :cartografia do
+    questao { rand(1..3) }
     resumo { Faker::Lorem.sentence(word_count: 10) }
     fonte { Faker::Internet.url }
     local { Faker::Address.country }

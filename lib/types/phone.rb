@@ -13,7 +13,11 @@ module  Types
     end
 
     def serialize(value)
-      value.full_e164
+      if value.is_a?(Phonelib::Phone)
+        value.full_e164
+      else
+        value
+      end
     end
   end
 end

@@ -24,6 +24,8 @@ RSpec/ImplicitExpect:
 RSpec/ImplicitSubject:
   EnforcedStyle: single_statement_only
 RSpec/ExampleLength:
-  Exclude: ['features/**/*']
+  Exclude:
+    - 'features/**/*'
+    - 'controllers/**/*'
 RSpec/MultipleExpectations:
   Exclude: ['features/**/*']
