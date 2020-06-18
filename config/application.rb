@@ -30,12 +30,13 @@ module PlataformasPolos
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.i18n.available_locales = %i[pt-BR en]
-    config.i18n.default_locale = :'pt-BR'
+    config.i18n.default_locale    = :'pt-BR'
 
+    config.generators.test_framework(:rspec)
     config.generators.orm(:active_record, primary_key_type: :uuid)
-    config.generators.stylesheets = true
-    config.generators.javascripts = false
-    # Don't generate system test files.
-    config.generators.system_tests = nil
+    config.generators.stylesheets  = true
+    config.generators.javascripts  = false
+    config.generators.system_tests = false
+    config.generators.view_specs   = false
   end
 end
