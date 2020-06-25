@@ -7,7 +7,6 @@ FactoryBot.define do
     ano { rand(2000..2020) }
     semestre { rand(1..2) }
     documento_data do
-
       attacher = ReportUploader::Attacher.new
 
       File.open('spec/support/files/dummy.pdf', binmode: true) do |file|

@@ -3,8 +3,7 @@
 require('rails_helper')
 require('support/factory_bot')
 
-RSpec.feature('Logins', type: :feature) do
-
+RSpec.describe('Logins', type: :feature) do
   describe 'log-in' do
     it 'user tries to access without logging in' do
       visit '/'
@@ -34,4 +33,14 @@ RSpec.feature('Logins', type: :feature) do
     end
   end
 
+  describe 'log-out' do
+    it 'logs user out' do
+      create(:user, email: 'test@mail.com', password: 'password')
+      visit new_user_session_url
+
+      fill_in 'E-mail', with: 'test@mail.com'
+      fill_in 'Senha', with: 'password'
+      click_on 'Login'
+    end
+  end
 end

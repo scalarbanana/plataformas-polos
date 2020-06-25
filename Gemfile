@@ -16,7 +16,7 @@ gem 'sass-rails', '>= 6'
 gem 'haml', '~> 5.1'
 gem 'haml-rails', '~> 2.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.0'
+gem 'webpacker', '~> 5.x'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Use postgresql as the database for Active Record
@@ -51,7 +51,7 @@ end
 
 group :test do
   # A library for setting up Ruby objects as test data.
-  gem 'factory_bot_rails', '~> 5.2'
+  gem 'factory_bot_rails', '~> 6.0'
   # A library for generating fake data such as names, addresses, and phone numbers.
   gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
   # SimpleCov is a code coverage analysis tool for Ruby
@@ -76,13 +76,13 @@ group :development do
   # Code smell detector for Ruby
   gem 'reek', '~> 6.0', require: false
   # A Ruby static code analyzer and code formatter
-  gem 'rubocop', '~> 0.81.0', require: false
-  gem 'rubocop-rails', '~> 2.5', require: false
+  gem 'rubocop', '~> 0.86', require: false
+  gem 'rubocop-rails', '~> 2.6', require: false
   gem 'rubocop-rspec', require: false
   # A free vulnerability scanner specifically designed for Ruby on Rails
   gem 'brakeman', '~> 4.8'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'listen', '>= 3.0', '< 3.2'
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

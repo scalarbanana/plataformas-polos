@@ -4,16 +4,14 @@ require('rails_helper')
 require('support/devise')
 require('support/factory_bot')
 
-RSpec.describe('Módulo Cartografias', type: :feature) do
-  let(:user) { create(:user_cartografia) }
+RSpec.describe('Cartografias', type: :feature) do
+  before { login_as(create(:user, :cartografia)) }
 
-  before { login_as(user) }
-
-  after { user.destroy! }
-
-  it 'User navigates to module' do
+  it 'user navigates to module' do
     visit('/')
+
     click_link('Cartografias')
+
     expect(page).to(have_css('table'))
     expect(page).to(have_link('Criar nova entrada'))
   end
