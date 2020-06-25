@@ -11,7 +11,7 @@
         %td= @user.email
       %tr
         %td Grupos:
-        %td= @user.roles.texts.join(', ')
+        %td= @user.permissions.texts.join(', ')
       %tr
         %td Último login:
         - if @user.last_sign_in_at?

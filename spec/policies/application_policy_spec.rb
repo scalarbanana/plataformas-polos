@@ -17,7 +17,7 @@ RSpec.describe(ApplicationPolicy) do
     end
 
     it 'allows access if user has `admin` role' do
-      is_expected.to(permit(build(:admin), Object.new))
+      is_expected.to(permit(build(:user, :admin), Object.new))
     end
   end
 

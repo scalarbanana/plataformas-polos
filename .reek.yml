@@ -30,3 +30,10 @@ directories:
   "app/models":
     InstanceVariableAssumption:
       enabled: false
+  "db/migrate":
+    TooManyStatements:
+      enabled: false
+    UncommunicativeVariableName:
+      enabled: false
+    FeatureEnvy:
+      enabled: false

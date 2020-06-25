@@ -50,7 +50,7 @@ class CartografiasController < ApplicationController
   private
 
   def set_cartografia
-    @cartografia = authorize(policy_scope(Cartografia).find(params[:id]))
+    @cartografia = authorize(Cartografia.find(params[:id]))
   end
 
   # Only allow a trusted parameter "white list" through.

@@ -10,7 +10,7 @@ RSpec.describe(TeciturasHelper, type: :helper) do
     end
 
     it 'returns the tecitura instance "$year/$semester"' do
-      assign(:tecitura, build(:tecitura, vinculacao_ano: 2020, vinculacao_semestre: 1))
+      assign(:tecitura, build(:tecitura, vinc_ano: 2020, vinc_semestre: 1))
       expect(helper.ano_semestre).to(eq('2020/1'))
     end
   end

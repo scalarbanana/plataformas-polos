@@ -20,12 +20,12 @@ RSpec.describe(ApplicationHelper, type: :helper) do
 
     it 'identifies the `users` module prefix' do
       request_path('/users/' + Faker::Internet.uuid)
-      expect(helper.current_route_scope).to(eq('users'))
+      expect(helper.current_route_scope).to(eq('user'))
     end
 
     it 'identifies the `cartografias` module prefix' do
       request_path('/cartografias/' + Faker::Internet.uuid)
-      expect(helper.current_route_scope).to(eq('cartografias'))
+      expect(helper.current_route_scope).to(eq('cartografia'))
     end
   end
 

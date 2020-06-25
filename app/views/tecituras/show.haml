@@ -15,7 +15,7 @@
       .card{ data: { controller: 'card', card: { default: 'closed' } }}
         .card-header
           .card-header-title= t('mongoid.attributes.contato.endereco')
-        .card-content= @tecitura.mulher_acompanhada.endereco.texto
+        .card-content= @tecitura.mulher_acompanhada.endereco
         .card-image
           %figure.image.is-4by3{src: 'https://bulma.io/images/placeholders/1280x960.png'}
   .card{ data: { controller: 'card' }}
@@ -29,7 +29,7 @@
             %td= @tecitura.regiao
           %tr
             %td= t('mongoid.attributes.tecitura.vinculacao')+':'
-            %td= ano_semestre(@tecitura.vinculacao_ano, @tecitura.vinculacao_semestre)
+            %td= ano_semestre(@tecitura.vinc_ano, @tecitura.vinc_semestre)
           %tr
             %td= t('mongoid.attributes.tecitura.situacao_acolhimento')+':'
             %td= @tecitura.situacao_acolhimento
@@ -87,8 +87,8 @@
           - @tecitura.relatorios.each do |relatorio|
             %tr
               %td= ano_semestre(relatorio.ano, relatorio.semestre)
-              %td= relatorio.document.metadata["filename"]
-              %td.has-text-centered= link_to "🔗", relatorio.document.download_url
+              %td= relatorio.documento.metadata["filename"]
+              %td.has-text-centered= link_to "🔗", relatorio.documento.download_url
 
 .buttons
   = link_to 'Voltar', tecituras_path, class: 'button is-link'

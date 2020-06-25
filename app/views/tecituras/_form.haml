@@ -17,10 +17,10 @@
     .field-label.is-normal
       %label.label Vinculação:
     .field-body
-      = f.input :vinculacao_ano, label: false, collection: ano_collection, prompt: 'Ano',
+      = f.input :vinc_ano, label: false, collection: ano_collection, prompt: 'Ano',
         wrapper_html: false, control_html: { class: 'select is-fullwidth' }
       %label.label.is-large /&nbsp&nbsp
-      = f.input :vinculacao_semestre, label: false, collection: semestre_collection, prompt: 'Semestre',
+      = f.input :vinc_semestre, label: false, collection: semestre_collection, prompt: 'Semestre',
         wrapper_html: false, control_html: { class: 'select is-fullwidth' }
   .field.is-horizontal
     .field-body

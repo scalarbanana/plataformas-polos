@@ -1,22 +1,16 @@
 # frozen_string_literal: true
 
-require('support/faker')
-
 FactoryBot.define do
-  factory :endereco do
-    texto { Faker::Address.full_address }
-    coordenadas { [Faker::Address.longitude, Faker::Address.latitude] }
-  end
-
-  factory :mulher_acompanhada, class: 'Contato' do
-    nome { Faker::Name.feminine_name }
-    telefone { Faker::PhoneNumber.cell_phone }
-    endereco
-  end
-
   factory :tecitura do
-    mulher_acompanhada
-    vinculacao_ano { 2020 }
-    vinculacao_semestre { 1 }
+    nome { Faker::Name.feminine_name }
+    endereco { Faker::Address.full_address }
+    vinc_ano { 2020 }
+    vinc_semestre { 1 }
+
+    trait :relatorio do
+      after(:create) do |tecitura|
+        create_list(:relatorio, 1, tecitura: tecitura)
+      end
+    end
   end
 end

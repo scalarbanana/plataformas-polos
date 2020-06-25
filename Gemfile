@@ -16,17 +16,13 @@ gem 'sass-rails', '>= 6'
 gem 'haml', '~> 5.1'
 gem 'haml-rails', '~> 2.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.0'
+gem 'webpacker', '~> 5.x'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
-# Mongoid is an ODM  Object Document Mapper Framework for MongoDB
-gem 'mongoid', '~> 7.1'
-# A Mongoid Extension that simplifies the use of MongoDB spatial features.
-gem 'mongoid-geospatial', '~> 5.1'
+# Use postgresql as the database for Active Record
+gem 'pg', '>= 0.18', '< 2.0'
 # File attachment toolkit for Ruby applications
 gem 'shrine', '~> 3.0'
-# Mongoid integration for shrine
-gem 'shrine-mongoid', '~> 1.0'
 # Complete Ruby geocoding solution.
 gem 'geocoder', '~> 1.6'
 # Ruby gem for phone validation and formatting using google libphonenumber library data
@@ -49,23 +45,23 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # rspec-rails is a testing framework for Rails 5+.
   gem 'rspec-rails', '~> 4.0'
-  # SimpleCov is a code coverage analysis tool for Ruby
-  gem 'simplecov', '~> 0.16.1'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :test do
+  # A library for setting up Ruby objects as test data.
+  gem 'factory_bot_rails', '~> 6.0'
+  # A library for generating fake data such as names, addresses, and phone numbers.
+  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
+  # SimpleCov is a code coverage analysis tool for Ruby
+  gem 'simplecov', '~> 0.16.1'
   # Coveralls for Ruby Test Coverage
   gem 'coveralls', '~> 0.8.22', require: false
   # Simple one-liner tests for common Rails functionality
   gem 'shoulda-matchers', '~> 4.3'
-  # A library for generating fake data such as names, addresses, and phone numbers.
-  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master', require: false
   # Acceptance test framework for web applications
-  gem 'capybara', '~> 3.32'
-  # A library for setting up Ruby objects as test data.
-  gem 'factory_bot_rails', '~> 5.2'
+  gem 'capybara', '~> 3.32', require: false
 end
 
 group :development do
@@ -80,15 +76,13 @@ group :development do
   # Code smell detector for Ruby
   gem 'reek', '~> 6.0', require: false
   # A Ruby static code analyzer and code formatter
-  gem 'rubocop', '~> 0.81.0', require: false
-  gem 'rubocop-rails', '~> 2.5', require: false
+  gem 'rubocop', '~> 0.86', require: false
+  gem 'rubocop-rails', '~> 2.6', require: false
   gem 'rubocop-rspec', require: false
   # A free vulnerability scanner specifically designed for Ruby on Rails
   gem 'brakeman', '~> 4.8'
-  # A fully configurable and extendable Git hook manager
-  gem 'overcommit', '~> 0.53.0', require: false
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'listen', '>= 3.0', '< 3.2'
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

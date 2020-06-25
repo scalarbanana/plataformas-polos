@@ -1,0 +1,31 @@
+inherit_from: ../.rubocop.yml
+
+require:
+  - rubocop-rspec
+
+AllCops:
+  EnabledByDefault: true
+
+Metrics/BlockLength:
+  Enabled: false
+
+Style/MethodCallWithArgsParentheses:
+  IgnoredMethods:
+    - is_expected
+    - expect
+    - to
+    - not_to
+    - be
+    - be_an
+RSpec/ExpectActual:
+  Exclude: ['routing/**/*']
+RSpec/ImplicitExpect:
+  EnforcedStyle: is_expected
+RSpec/ImplicitSubject:
+  EnforcedStyle: single_statement_only
+RSpec/ExampleLength:
+  Exclude:
+    - 'features/**/*'
+    - 'controllers/**/*'
+RSpec/MultipleExpectations:
+  Exclude: ['features/**/*']

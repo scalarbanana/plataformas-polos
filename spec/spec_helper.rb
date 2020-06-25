@@ -49,11 +49,10 @@ RSpec.configure do |config|
     mocks.verify_doubled_constant_names = true
   end
 
-  # loading seeds
-  # config.before(:suite) do
-  #
-  #   Rails.application.load_seed
-  # end
+  config.before(:suite) do
+    Faker::Config.locale = :'pt-BR'
+    I18n.reload!
+  end
 
   # This option will default to `:apply_to_host_groups` in RSpec 4 (and will
   # have no way to turn it off -- the option exists only for backwards
