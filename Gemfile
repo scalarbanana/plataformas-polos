@@ -3,7 +3,7 @@
 source('https://rubygems.org')
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby('2.7.1')
+ruby('2.6.6')
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.2.2'
@@ -25,7 +25,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'shrine', '~> 3.0'
 # Complete Ruby geocoding solution.
 gem 'geocoder', '~> 1.6'
-# Ruby gem for phone validation and formatting using google libphonenumber library data
+# Ruby gem for phone validation and formatting
 gem 'phonelib', '~> 0.6.43'
 # Enumerated attributes with I18n and ActiveRecord/Mongoid support
 gem 'enumerize', '~> 2.3.1'
