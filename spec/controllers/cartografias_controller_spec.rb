@@ -4,6 +4,7 @@ require('rails_helper')
 require('support/factory_bot')
 require('support/devise')
 
+# TODO: substitute for richer feature and model specs
 RSpec.describe(CartografiasController, type: :controller) do
   subject(:controller) { described_class }
 

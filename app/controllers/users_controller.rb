@@ -55,7 +55,7 @@ class UsersController < ApplicationController
   end
 
   # Only allow a trusted parameter "white list" through.
-  def user_params
+  def user_params # rubocop:disable Metrics/MethodLength
     user = params.require(:user).permit(
       :name,
       :email,

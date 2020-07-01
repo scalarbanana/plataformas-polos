@@ -4,6 +4,7 @@ require('rails_helper')
 require('support/factory_bot')
 require('support/devise')
 
+# TODO: substitute for https://github.com/varvet/pundit#strong-parameters
 RSpec.describe(UsersController, type: :controller) do
   subject(:controller) { described_class }
 
