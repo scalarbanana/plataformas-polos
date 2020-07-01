@@ -20,6 +20,11 @@ Layout/LineLength:
   AutoCorrect: true
   IgnoredPatterns: ['(\A|\s)#']
 
+Lint/ConstantResolution:
+  Enabled: false
+
+Style/DisableCopsWithinSourceCodeDirective:
+  Enabled: false
 Style/AsciiComments:
   Enabled: false
 Style/MissingElse:
