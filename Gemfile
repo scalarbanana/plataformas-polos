@@ -22,7 +22,7 @@ gem 'turbolinks', '~> 5'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # File attachment toolkit for Ruby applications
-gem 'shrine', '~> 3.0'
+gem 'shrine', '~> 3.3'
 # Complete Ruby geocoding solution.
 gem 'geocoder', '~> 1.6'
 # Ruby gem for phone validation and formatting
