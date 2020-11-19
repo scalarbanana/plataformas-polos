@@ -74,6 +74,4 @@ test:
 #
 production:
   <<: *default
-  database: plataformas_polos_production
-  username: plataformas_polos
-  password: <%= ENV['PLATAFORMAS_POLOS_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

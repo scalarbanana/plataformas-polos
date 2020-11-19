@@ -5,9 +5,9 @@
 ### Dependências e versões
 | | |
 | ---------------- | ----- |
-| Ruby             | 2.7.1 |
+| Ruby             | 2.7.2 |
 | Bundler          | 2.1.4 |
-| NodeJS           | 10    |
+| NodeJS           | 14    |
 | Servidor MongoDB | 4.*   |
 
 ### Variáveis de ambiente
